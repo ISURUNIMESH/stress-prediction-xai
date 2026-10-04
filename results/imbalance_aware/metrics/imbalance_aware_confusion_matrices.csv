@@ -1,0 +1,37 @@
+model,actual_class,predicted_class,count
+Logistic Regression,High Stress,High Stress,7
+Logistic Regression,High Stress,Low Stress,7
+Logistic Regression,High Stress,Moderate Stress,6
+Logistic Regression,Low Stress,High Stress,3
+Logistic Regression,Low Stress,Low Stress,6
+Logistic Regression,Low Stress,Moderate Stress,10
+Logistic Regression,Moderate Stress,High Stress,91
+Logistic Regression,Moderate Stress,Low Stress,73
+Logistic Regression,Moderate Stress,Moderate Stress,97
+SVM,High Stress,High Stress,2
+SVM,High Stress,Low Stress,1
+SVM,High Stress,Moderate Stress,17
+SVM,Low Stress,High Stress,1
+SVM,Low Stress,Low Stress,3
+SVM,Low Stress,Moderate Stress,15
+SVM,Moderate Stress,High Stress,45
+SVM,Moderate Stress,Low Stress,25
+SVM,Moderate Stress,Moderate Stress,191
+Random Forest,High Stress,High Stress,0
+Random Forest,High Stress,Low Stress,0
+Random Forest,High Stress,Moderate Stress,20
+Random Forest,Low Stress,High Stress,0
+Random Forest,Low Stress,Low Stress,0
+Random Forest,Low Stress,Moderate Stress,19
+Random Forest,Moderate Stress,High Stress,0
+Random Forest,Moderate Stress,Low Stress,0
+Random Forest,Moderate Stress,Moderate Stress,261
+XGBoost,High Stress,High Stress,1
+XGBoost,High Stress,Low Stress,1
+XGBoost,High Stress,Moderate Stress,18
+XGBoost,Low Stress,High Stress,1
+XGBoost,Low Stress,Low Stress,2
+XGBoost,Low Stress,Moderate Stress,16
+XGBoost,Moderate Stress,High Stress,33
+XGBoost,Moderate Stress,Low Stress,19
+XGBoost,Moderate Stress,Moderate Stress,209

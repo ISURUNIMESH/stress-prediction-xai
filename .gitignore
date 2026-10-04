@@ -11,15 +11,42 @@ env/
 
 # Jupyter Notebook
 .ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
 
 # VS Code
 .vscode/
+.idea/
+
+# Local configuration and temporary files
+.env
+.env.*
+!.env.example
+secrets/
+tmp/
+temp/
+*.tmp
+*.temp
 
 # Dataset
-dataset/raw/*.csv
-dataset/raw/*.xlsx
-dataset/processed/*.csv
-dataset/processed/*.xlsx
+dataset/raw/*
+!dataset/raw/.gitkeep
+dataset/processed/*
+!dataset/processed/.gitkeep
+
+# Fitted artifacts can encode training examples (SVM support vectors and SHAP background)
+application/artifacts/*.joblib
+
+# Participant-level predictions, small-cell subgroup tables, and local explanations
+results/nested_cv/nested_cv_predictions.csv
+results/imbalance_improved/outer_fold_predictions.csv
+results/three_class_improvement/outer_fold_predictions.csv
+results/imbalance_aware/subgroup/subgroup_results.csv
+results/imbalance_aware/errors/error_analysis.csv
+results/imbalance_aware/shap/local_prediction_contributions.csv
+results/shap_plots/local_prediction_contributions.csv
 
 # Python cache
 *.log

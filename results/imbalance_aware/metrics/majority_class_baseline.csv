@@ -1,0 +1,2 @@
+split,accuracy,balanced_accuracy,f1_macro,f1_weighted,recall_high_stress,recall_low_stress,recall_moderate_stress,cv_accuracy_mean,cv_accuracy_std,cv_balanced_accuracy_mean,cv_balanced_accuracy_std,cv_f1_macro_mean,cv_f1_macro_std,cv_f1_weighted_mean,cv_f1_weighted_std
+test,0.87,0.3333333333333333,0.31016042780748665,0.8095187165775402,0.0,0.0,1.0,0.8706666666666667,0.0034426518632954465,0.33333333333333337,5.851389114294502e-17,0.31028639213692594,0.0006563266134904898,0.8104741569225554,0.004916323886119424

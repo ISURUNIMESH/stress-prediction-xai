@@ -1,0 +1,44 @@
+{
+  "selected_model": "SVM",
+  "selection_criterion": "Highest mean 10-fold CV Macro F1; CV Balanced Accuracy is the tie-breaker.",
+  "selection_values": {
+    "cv_macro_f1_mean": 0.3374462393950052,
+    "cv_macro_f1_std": 0.03966369793745961,
+    "cv_balanced_accuracy_mean": 0.3586838041799874,
+    "cv_balanced_accuracy_std": 0.058954783766490326
+  },
+  "held_out_test": {
+    "macro_f1": 0.3243599092529574,
+    "balanced_accuracy": 0.32989850104187673,
+    "minority_class_recall": {
+      "Low Stress": 0.1578947368421052,
+      "High Stress": 0.1
+    },
+    "minority_class_f1": {
+      "Low Stress": 0.125,
+      "High Stress": 0.0588235294117647
+    },
+    "macro_roc_auc_ovr": 0.507579793274123,
+    "weighted_roc_auc_ovr": 0.41557795614824083,
+    "accuracy": 0.6533333333333333,
+    "f1_weighted": 0.6984911278561011
+  },
+  "baseline_comparison": {
+    "baseline_test_macro_f1": 0.3243599092529574,
+    "imbalance_aware_test_macro_f1": 0.3243599092529574,
+    "test_macro_f1_improved": false,
+    "minority_class_recall_improved": {
+      "Low Stress": false,
+      "High Stress": false
+    },
+    "baseline_test_balanced_accuracy": 0.3298985010418767,
+    "imbalance_aware_test_balanced_accuracy": 0.32989850104187673,
+    "test_balanced_accuracy_improved": false,
+    "baseline_cv_macro_f1_mean": 0.3374462393950052,
+    "imbalance_aware_cv_macro_f1_mean": 0.3374462393950052,
+    "baseline_cv_macro_f1_std": 0.0396636979374596,
+    "imbalance_aware_cv_macro_f1_std": 0.03966369793745961
+  },
+  "final_shap_not_run": false,
+  "shap_status": "completed after CV-based model selection"
+}

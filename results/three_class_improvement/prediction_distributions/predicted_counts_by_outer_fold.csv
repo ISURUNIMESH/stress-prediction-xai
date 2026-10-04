@@ -1,0 +1,46 @@
+model,outer_fold,predicted_low_count,predicted_moderate_count,predicted_high_count,low_predicted,moderate_predicted,high_predicted
+Current SVM,1,19,263,18,True,True,True
+Current SVM,2,14,265,21,True,True,True
+Current SVM,3,15,264,21,True,True,True
+Current SVM,4,28,249,23,True,True,True
+Current SVM,5,12,267,21,True,True,True
+SMOTENC + SVM,1,15,278,7,True,True,True
+SMOTENC + SVM,2,4,289,7,True,True,True
+SMOTENC + SVM,3,4,289,7,True,True,True
+SMOTENC + SVM,4,6,288,6,True,True,True
+SMOTENC + SVM,5,6,287,7,True,True,True
+Threshold-tuned SMOTENC + SVM,1,21,261,18,True,True,True
+Threshold-tuned SMOTENC + SVM,2,6,285,9,True,True,True
+Threshold-tuned SMOTENC + SVM,3,6,285,9,True,True,True
+Threshold-tuned SMOTENC + SVM,4,13,273,14,True,True,True
+Threshold-tuned SMOTENC + SVM,5,8,283,9,True,True,True
+SMOTENC + weighted SVM,1,20,254,26,True,True,True
+SMOTENC + weighted SVM,2,16,264,20,True,True,True
+SMOTENC + weighted SVM,3,14,266,20,True,True,True
+SMOTENC + weighted SVM,4,19,267,14,True,True,True
+SMOTENC + weighted SVM,5,19,258,23,True,True,True
+Threshold-tuned SMOTENC + weighted SVM,1,16,266,18,True,True,True
+Threshold-tuned SMOTENC + weighted SVM,2,16,264,20,True,True,True
+Threshold-tuned SMOTENC + weighted SVM,3,14,266,20,True,True,True
+Threshold-tuned SMOTENC + weighted SVM,4,18,271,11,True,True,True
+Threshold-tuned SMOTENC + weighted SVM,5,19,258,23,True,True,True
+Tuned weighted SVM,1,23,252,25,True,True,True
+Tuned weighted SVM,2,15,260,25,True,True,True
+Tuned weighted SVM,3,35,219,46,True,True,True
+Tuned weighted SVM,4,43,211,46,True,True,True
+Tuned weighted SVM,5,27,237,36,True,True,True
+Threshold-tuned Tuned weighted SVM,1,23,252,25,True,True,True
+Threshold-tuned Tuned weighted SVM,2,15,260,25,True,True,True
+Threshold-tuned Tuned weighted SVM,3,35,219,46,True,True,True
+Threshold-tuned Tuned weighted SVM,4,43,211,46,True,True,True
+Threshold-tuned Tuned weighted SVM,5,27,237,36,True,True,True
+SMOTENC + tuned SVM,1,30,226,44,True,True,True
+SMOTENC + tuned SVM,2,16,264,20,True,True,True
+SMOTENC + tuned SVM,3,21,260,19,True,True,True
+SMOTENC + tuned SVM,4,25,245,30,True,True,True
+SMOTENC + tuned SVM,5,27,244,29,True,True,True
+Threshold-tuned SMOTENC + tuned SVM,1,16,266,18,True,True,True
+Threshold-tuned SMOTENC + tuned SVM,2,15,275,10,True,True,True
+Threshold-tuned SMOTENC + tuned SVM,3,21,260,19,True,True,True
+Threshold-tuned SMOTENC + tuned SVM,4,25,245,30,True,True,True
+Threshold-tuned SMOTENC + tuned SVM,5,27,244,29,True,True,True

@@ -1,0 +1,10 @@
+model,folds_low_predicted,folds_moderate_predicted,folds_high_predicted
+Current SVM,5,5,5
+SMOTENC + SVM,5,5,5
+Threshold-tuned SMOTENC + SVM,5,5,5
+SMOTENC + weighted SVM,5,5,5
+Threshold-tuned SMOTENC + weighted SVM,5,5,5
+Tuned weighted SVM,5,5,5
+Threshold-tuned Tuned weighted SVM,5,5,5
+SMOTENC + tuned SVM,5,5,5
+Threshold-tuned SMOTENC + tuned SVM,5,5,5

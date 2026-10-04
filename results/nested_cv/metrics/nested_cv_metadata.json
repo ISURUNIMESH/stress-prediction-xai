@@ -1,0 +1,119 @@
+{
+  "experiment": "Nested Stratified Cross-Validation",
+  "purpose": "Internal validation with inner-fold model selection and outer-fold evaluation; not external validation.",
+  "dataset": "dataset\\processed\\cleaned_stress_dataset.csv",
+  "target": "Stress_Level",
+  "excluded_predictors": [
+    "Timestamp",
+    "Consent",
+    "PSS10_Total",
+    "Stress_Level",
+    "PSS_Q1",
+    "PSS_Q2",
+    "PSS_Q3",
+    "PSS_Q4",
+    "PSS_Q5",
+    "PSS_Q6",
+    "PSS_Q7",
+    "PSS_Q8",
+    "PSS_Q9",
+    "PSS_Q10"
+  ],
+  "predictors": [
+    "Age",
+    "Gender",
+    "University",
+    "Degree_Program",
+    "Academic_Year",
+    "Sleep_Hours",
+    "Exercise_Frequency",
+    "Screen_Time_Hours",
+    "Social_Media_Hours",
+    "Study_Hours",
+    "Academic_Pressure",
+    "Financial_Stress",
+    "Family_Support"
+  ],
+  "outer_cv": {
+    "type": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 42
+  },
+  "inner_cv": {
+    "type": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 42
+  },
+  "selection_rule": "Highest mean inner-CV Macro F1; mean inner Balanced Accuracy breaks ties.",
+  "selected_model_by_outer_mean": "SVM",
+  "outer_mean_selection_rule": "Highest mean outer Macro F1; outer Balanced Accuracy is the tie-breaker; interpret model ranking as exploratory due to comparing four candidates.",
+  "parameter_grids": {
+    "Logistic Regression": [
+      {
+        "classifier__C": 0.1
+      },
+      {
+        "classifier__C": 1.0
+      }
+    ],
+    "SVM": [
+      {
+        "classifier__C": 0.5,
+        "classifier__gamma": "scale",
+        "classifier__kernel": "rbf"
+      },
+      {
+        "classifier__C": 2.0,
+        "classifier__gamma": "scale",
+        "classifier__kernel": "rbf"
+      }
+    ],
+    "Random Forest": [
+      {
+        "classifier__max_depth": null,
+        "classifier__min_samples_leaf": 2,
+        "classifier__min_samples_split": 2,
+        "classifier__n_estimators": 200
+      },
+      {
+        "classifier__max_depth": 12,
+        "classifier__min_samples_leaf": 2,
+        "classifier__min_samples_split": 4,
+        "classifier__n_estimators": 300
+      }
+    ],
+    "XGBoost": [
+      {
+        "classifier__colsample_bytree": 0.8,
+        "classifier__learning_rate": 0.05,
+        "classifier__max_depth": 3,
+        "classifier__n_estimators": 150,
+        "classifier__subsample": 0.8
+      },
+      {
+        "classifier__colsample_bytree": 0.8,
+        "classifier__learning_rate": 0.05,
+        "classifier__max_depth": 4,
+        "classifier__n_estimators": 250,
+        "classifier__subsample": 0.8
+      }
+    ]
+  },
+  "imbalance_handling": {
+    "logistic_regression": "class_weight='balanced'",
+    "svm": "class_weight='balanced'",
+    "random_forest": "class_weight='balanced'",
+    "xgboost": "compute_sample_weight('balanced') from each fit's training labels only; no scale_pos_weight"
+  },
+  "preprocessing": "Imputation, scaling, and one-hot encoding are in each estimator pipeline and fitted on the current fit partition only.",
+  "confidence_intervals": "Not produced; five outer folds have overlapping training sets and are insufficient for an independent-fold interval. Fold SD is reported descriptively.",
+  "random_seeds": {
+    "outer_cv": 42,
+    "inner_cv": 42,
+    "estimator_random_state": 42
+  },
+  "command": ".venv\\Scripts\\python.exe -m experiments.nested_stratified_cv",
+  "python_version": "3.12.10"
+}

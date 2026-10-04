@@ -1,0 +1,154 @@
+model,metric,mean,std,outer_folds,uncertainty_note
+Current SVM,accuracy,0.7686666666666666,0.015383974345619087,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Current SVM,balanced_accuracy,0.34510755626159956,0.02415686741735075,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Current SVM,macro_f1,0.3425265445837976,0.02151743133261998,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Current SVM,macro_precision,0.34229341961792087,0.022765406287100966,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Current SVM,macro_recall,0.34510755626159956,0.02415686741735075,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Current SVM,weighted_f1,0.7675816080041056,0.01065180479399321,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Current SVM,roc_auc_macro_ovr,0.511228133722029,0.027936008381361236,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Current SVM,roc_auc_weighted_ovr,0.4715933268246809,0.0460804924526199,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Current SVM,high_precision,0.06742581090407176,0.025757243186511087,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Current SVM,high_recall,0.07105263157894737,0.02644704110821287,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Current SVM,high_f1,0.0691375266361086,0.02608386602527209,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Current SVM,low_precision,0.09010025062656642,0.08682682401617095,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Current SVM,low_recall,0.09368421052631579,0.10775986435427139,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Current SVM,low_f1,0.08860582306830907,0.09044297326239194,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Current SVM,moderate_precision,0.8693541973231245,0.009645392109951391,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Current SVM,moderate_recall,0.8705858266795357,0.021304948843226434,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Current SVM,moderate_f1,0.8698362840469752,0.011539818454948088,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,accuracy,0.8326666666666667,0.009545214042184232,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,balanced_accuracy,0.33145399399759967,0.007804882419961978,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,macro_f1,0.3223609711051447,0.011432978634857554,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,macro_precision,0.3246288714138784,0.02332981647412944,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,macro_recall,0.33145399399759967,0.007804882419961978,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,weighted_f1,0.7958039423046668,0.004058572238352953,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,roc_auc_macro_ovr,0.5028263311902341,0.040161403112391594,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,roc_auc_weighted_ovr,0.4675205950591416,0.06509706993925132,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,high_precision,0.09047619047619047,0.08316309141225228,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,high_recall,0.030526315789473686,0.027887287982608328,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,high_f1,0.045584045584045586,0.0416286016985825,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,low_precision,0.013333333333333332,0.02981423969999719,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,low_recall,0.010526315789473684,0.02353755765789252,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,low_f1,0.011764705882352941,0.026306682088232818,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,moderate_precision,0.8700770904321116,0.004848678220984731,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,moderate_recall,0.9533093504138517,0.012708360821951778,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + SVM,moderate_f1,0.9097341618490354,0.004134143627153368,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,accuracy,0.8099999999999999,0.017950549357114997,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,balanced_accuracy,0.335795497635317,0.018128387592240267,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,macro_f1,0.33034845658516077,0.023648233660160563,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,macro_precision,0.32915072472985163,0.028501410518950707,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,macro_recall,0.335795497635317,0.018128387592240267,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,weighted_f1,0.7864309699728693,0.0034967561039967554,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,roc_auc_macro_ovr,0.5028263311902341,0.040161403112391594,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,roc_auc_weighted_ovr,0.4675205950591416,0.06509706993925132,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,high_precision,0.09206349206349206,0.06162942431211802,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,high_recall,0.06210526315789473,0.05791267664633962,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,high_f1,0.07227595604877553,0.05808611865247796,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,low_precision,0.02490842490842491,0.035646126375686045,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,low_recall,0.021052631578947368,0.02882750302658769,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,low_f1,0.0225,0.03112474899497183,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,moderate_precision,0.870480257217638,0.008732156072384506,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,moderate_recall,0.9242285981691089,0.027372577602995003,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + SVM,moderate_f1,0.8962694137067067,0.008742985041243184,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,accuracy,0.7653333333333333,0.014832396974191342,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,balanced_accuracy,0.33117474230163163,0.016132911074441755,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,macro_f1,0.3303712447319709,0.016915357084341436,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,macro_precision,0.3303029299544443,0.01828807493895289,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,macro_recall,0.33117474230163163,0.016132911074441755,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,weighted_f1,0.764355776105642,0.011591308089894375,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,roc_auc_macro_ovr,0.5117695226251818,0.04033907587878543,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,roc_auc_weighted_ovr,0.47920254135887214,0.05211750955277435,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,high_precision,0.05836598184424271,0.014803889393245239,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,high_recall,0.061578947368421046,0.02444678771051282,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,high_f1,0.059066293183940244,0.017211049677802768,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,low_precision,0.06460526315789474,0.04386831054827745,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,low_recall,0.06210526315789473,0.04282283285643788,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,low_f1,0.06325043377674958,0.04327757960584514,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,moderate_precision,0.8679375448611955,0.012545009298092775,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,moderate_recall,0.8698400163785791,0.017470657982615996,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + weighted SVM,moderate_f1,0.8687970072352229,0.011458368400013862,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,accuracy,0.7713333333333333,0.018043158136965807,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,balanced_accuracy,0.32695813046112987,0.011591606676416129,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,macro_f1,0.3264135439761542,0.012785127354620764,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,macro_precision,0.32691773571082006,0.014836529192297117,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,macro_recall,0.32695813046112987,0.011591606676416129,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,weighted_f1,0.7660572919634465,0.013204794571090115,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,roc_auc_macro_ovr,0.5084313947541835,0.03559867079848309,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,roc_auc_weighted_ovr,0.475573539812667,0.04953040883932204,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,high_precision,0.05798858146684234,0.01889354273662492,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,high_recall,0.05105263157894737,0.0014413751513293815,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,high_f1,0.053237846141071944,0.0067157287845111754,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,low_precision,0.057163742690058486,0.03755257904386411,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,low_recall,0.05157894736842106,0.035384708029413924,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,low_f1,0.05418077418077418,0.03638016865414479,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,moderate_precision,0.8656008829755594,0.009451295640197668,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,moderate_recall,0.8782428124360212,0.020952403447648406,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + weighted SVM,moderate_f1,0.8718220116066163,0.01421174235628293,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,accuracy,0.698,0.056696070802520745,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,balanced_accuracy,0.34662029661032173,0.019115470420596782,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,macro_f1,0.3363363417314144,0.014033836224312668,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,macro_precision,0.3395270298219249,0.0126944406780026,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,macro_recall,0.34662029661032173,0.019115470420596782,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,weighted_f1,0.7271959294412011,0.03439723946741213,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,roc_auc_macro_ovr,0.508629756122695,0.030765466083409167,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,roc_auc_weighted_ovr,0.46743050564864574,0.049268306074612814,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,high_precision,0.07285024154589373,0.0295562962133177,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,high_recall,0.12210526315789474,0.025554786076442553,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,high_f1,0.08969696969696969,0.027574092523823823,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,low_precision,0.07894907474280578,0.053566835749954404,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,low_recall,0.13526315789473684,0.11500331200819038,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,low_f1,0.09810402617540573,0.0710514049412884,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,moderate_precision,0.866781773177075,0.011520618848691135,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,moderate_recall,0.7824924687783334,0.07022969740357098,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Tuned weighted SVM,moderate_f1,0.8212080293218678,0.04023157553813896,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,accuracy,0.698,0.056696070802520745,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,balanced_accuracy,0.34662029661032173,0.019115470420596782,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,macro_f1,0.3363363417314144,0.014033836224312668,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,macro_precision,0.3395270298219249,0.0126944406780026,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,macro_recall,0.34662029661032173,0.019115470420596782,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,weighted_f1,0.7271959294412011,0.03439723946741213,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,roc_auc_macro_ovr,0.508629756122695,0.030765466083409167,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,roc_auc_weighted_ovr,0.46743050564864574,0.049268306074612814,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,high_precision,0.07285024154589373,0.0295562962133177,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,high_recall,0.12210526315789474,0.025554786076442553,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,high_f1,0.08969696969696969,0.027574092523823823,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,low_precision,0.07894907474280578,0.053566835749954404,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,low_recall,0.13526315789473684,0.11500331200819038,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,low_f1,0.09810402617540573,0.0710514049412884,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,moderate_precision,0.866781773177075,0.011520618848691135,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,moderate_recall,0.7824924687783334,0.07022969740357098,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned Tuned weighted SVM,moderate_f1,0.8212080293218678,0.04023157553813896,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,accuracy,0.7220000000000001,0.033466401061363005,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,balanced_accuracy,0.32127843225389674,0.013912898485721106,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,macro_f1,0.3190534002989823,0.008522850268912039,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,macro_precision,0.3221672659575422,0.009152233204757929,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,macro_recall,0.32127843225389674,0.013912898485721106,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,weighted_f1,0.7386043286319652,0.015688515676770935,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,roc_auc_macro_ovr,0.5035104694807984,0.03475885300384975,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,roc_auc_weighted_ovr,0.4689863280452248,0.05736254472859218,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,high_precision,0.0591679040862344,0.02178127189871705,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,high_recall,0.09315789473684209,0.06983855541686612,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,high_f1,0.0703199023199023,0.035618879904684146,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,low_precision,0.044097883597883594,0.011549461358399281,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,low_recall,0.05210526315789473,0.0011768778828946235,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,low_f1,0.04719338412347531,0.006559171387887116,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,moderate_precision,0.8632360101885086,0.012591117587691733,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,moderate_recall,0.8185721388669533,0.04336171563873394,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+SMOTENC + tuned SVM,moderate_f1,0.8396469144535693,0.01989335562697093,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,accuracy,0.75,0.04365266951236265,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,balanced_accuracy,0.3223886608099905,0.013891448726578827,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,macro_f1,0.3219793977196205,0.011881885341652841,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,macro_precision,0.3231670007015713,0.009328097020234672,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,macro_recall,0.3223886608099905,0.013891448726578827,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,weighted_f1,0.753689669859436,0.026452625662652444,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,roc_auc_macro_ovr,0.4966049120927291,0.03158606130227402,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,roc_auc_weighted_ovr,0.4587786250003144,0.05695453929609224,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,high_precision,0.04209719701552732,0.026753441611505703,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,high_recall,0.05157894736842106,0.037244048028824785,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,high_f1,0.045733887733887736,0.030158711641658138,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,low_precision,0.0640978835978836,0.03993948603126541,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,low_recall,0.06263157894736841,0.023859004119248704,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,low_f1,0.06255953058205874,0.03128319056397492,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,moderate_precision,0.8633059214913029,0.010330272393422647,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,moderate_recall,0.8529554561141822,0.05051924414379682,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.
+Threshold-tuned SMOTENC + tuned SVM,moderate_f1,0.857644774842915,0.02941029942054784,5,Descriptive SD across overlapping outer CV partitions; no inferential claim.

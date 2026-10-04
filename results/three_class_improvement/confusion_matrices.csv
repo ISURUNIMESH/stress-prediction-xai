@@ -1,0 +1,82 @@
+model,actual,predicted,count
+Current SVM,High Stress,High Stress,7
+Current SVM,High Stress,Low Stress,5
+Current SVM,High Stress,Moderate Stress,86
+Current SVM,Low Stress,High Stress,2
+Current SVM,Low Stress,Low Stress,9
+Current SVM,Low Stress,Moderate Stress,85
+Current SVM,Moderate Stress,High Stress,95
+Current SVM,Moderate Stress,Low Stress,74
+Current SVM,Moderate Stress,Moderate Stress,1137
+SMOTENC + SVM,High Stress,High Stress,3
+SMOTENC + SVM,High Stress,Low Stress,3
+SMOTENC + SVM,High Stress,Moderate Stress,92
+SMOTENC + SVM,Low Stress,High Stress,1
+SMOTENC + SVM,Low Stress,Low Stress,1
+SMOTENC + SVM,Low Stress,Moderate Stress,94
+SMOTENC + SVM,Moderate Stress,High Stress,30
+SMOTENC + SVM,Moderate Stress,Low Stress,31
+SMOTENC + SVM,Moderate Stress,Moderate Stress,1245
+Threshold-tuned SMOTENC + SVM,High Stress,High Stress,6
+Threshold-tuned SMOTENC + SVM,High Stress,Low Stress,4
+Threshold-tuned SMOTENC + SVM,High Stress,Moderate Stress,88
+Threshold-tuned SMOTENC + SVM,Low Stress,High Stress,2
+Threshold-tuned SMOTENC + SVM,Low Stress,Low Stress,2
+Threshold-tuned SMOTENC + SVM,Low Stress,Moderate Stress,92
+Threshold-tuned SMOTENC + SVM,Moderate Stress,High Stress,51
+Threshold-tuned SMOTENC + SVM,Moderate Stress,Low Stress,48
+Threshold-tuned SMOTENC + SVM,Moderate Stress,Moderate Stress,1207
+SMOTENC + weighted SVM,High Stress,High Stress,6
+SMOTENC + weighted SVM,High Stress,Low Stress,7
+SMOTENC + weighted SVM,High Stress,Moderate Stress,85
+SMOTENC + weighted SVM,Low Stress,High Stress,2
+SMOTENC + weighted SVM,Low Stress,Low Stress,6
+SMOTENC + weighted SVM,Low Stress,Moderate Stress,88
+SMOTENC + weighted SVM,Moderate Stress,High Stress,95
+SMOTENC + weighted SVM,Moderate Stress,Low Stress,75
+SMOTENC + weighted SVM,Moderate Stress,Moderate Stress,1136
+Threshold-tuned SMOTENC + weighted SVM,High Stress,High Stress,5
+Threshold-tuned SMOTENC + weighted SVM,High Stress,Low Stress,5
+Threshold-tuned SMOTENC + weighted SVM,High Stress,Moderate Stress,88
+Threshold-tuned SMOTENC + weighted SVM,Low Stress,High Stress,1
+Threshold-tuned SMOTENC + weighted SVM,Low Stress,Low Stress,5
+Threshold-tuned SMOTENC + weighted SVM,Low Stress,Moderate Stress,90
+Threshold-tuned SMOTENC + weighted SVM,Moderate Stress,High Stress,86
+Threshold-tuned SMOTENC + weighted SVM,Moderate Stress,Low Stress,73
+Threshold-tuned SMOTENC + weighted SVM,Moderate Stress,Moderate Stress,1147
+Tuned weighted SVM,High Stress,High Stress,12
+Tuned weighted SVM,High Stress,Low Stress,8
+Tuned weighted SVM,High Stress,Moderate Stress,78
+Tuned weighted SVM,Low Stress,High Stress,4
+Tuned weighted SVM,Low Stress,Low Stress,13
+Tuned weighted SVM,Low Stress,Moderate Stress,79
+Tuned weighted SVM,Moderate Stress,High Stress,162
+Tuned weighted SVM,Moderate Stress,Low Stress,122
+Tuned weighted SVM,Moderate Stress,Moderate Stress,1022
+Threshold-tuned Tuned weighted SVM,High Stress,High Stress,12
+Threshold-tuned Tuned weighted SVM,High Stress,Low Stress,8
+Threshold-tuned Tuned weighted SVM,High Stress,Moderate Stress,78
+Threshold-tuned Tuned weighted SVM,Low Stress,High Stress,4
+Threshold-tuned Tuned weighted SVM,Low Stress,Low Stress,13
+Threshold-tuned Tuned weighted SVM,Low Stress,Moderate Stress,79
+Threshold-tuned Tuned weighted SVM,Moderate Stress,High Stress,162
+Threshold-tuned Tuned weighted SVM,Moderate Stress,Low Stress,122
+Threshold-tuned Tuned weighted SVM,Moderate Stress,Moderate Stress,1022
+SMOTENC + tuned SVM,High Stress,High Stress,9
+SMOTENC + tuned SVM,High Stress,Low Stress,7
+SMOTENC + tuned SVM,High Stress,Moderate Stress,82
+SMOTENC + tuned SVM,Low Stress,High Stress,3
+SMOTENC + tuned SVM,Low Stress,Low Stress,5
+SMOTENC + tuned SVM,Low Stress,Moderate Stress,88
+SMOTENC + tuned SVM,Moderate Stress,High Stress,130
+SMOTENC + tuned SVM,Moderate Stress,Low Stress,107
+SMOTENC + tuned SVM,Moderate Stress,Moderate Stress,1069
+Threshold-tuned SMOTENC + tuned SVM,High Stress,High Stress,5
+Threshold-tuned SMOTENC + tuned SVM,High Stress,Low Stress,6
+Threshold-tuned SMOTENC + tuned SVM,High Stress,Moderate Stress,87
+Threshold-tuned SMOTENC + tuned SVM,Low Stress,High Stress,1
+Threshold-tuned SMOTENC + tuned SVM,Low Stress,Low Stress,6
+Threshold-tuned SMOTENC + tuned SVM,Low Stress,Moderate Stress,89
+Threshold-tuned SMOTENC + tuned SVM,Moderate Stress,High Stress,100
+Threshold-tuned SMOTENC + tuned SVM,Moderate Stress,Low Stress,92
+Threshold-tuned SMOTENC + tuned SVM,Moderate Stress,Moderate Stress,1114

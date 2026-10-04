@@ -1,0 +1,12 @@
+{
+  "selected_model": "SVM",
+  "explainer": "KernelExplainer",
+  "background_strategy": "random sample from seed-42 training split after fold-safe preprocessing fit",
+  "background_sample_size": 30,
+  "explained_sample_size": 30,
+  "nsamples": 100,
+  "random_state": 42,
+  "prediction_explained": "Moderate Stress",
+  "selection_criterion": "highest 10-fold CV macro F1, CV balanced accuracy as tie-breaker",
+  "causal_interpretation": false
+}

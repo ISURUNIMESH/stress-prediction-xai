@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5fb">
+    <meta name="description" content="Research prototype for explainable stress prediction among Sri Lankan university students.">
+    <title>Explainable AI Stress Prediction System</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/analytics.css">
+    <link rel="stylesheet" href="/visualizations.css">
+    <script src="/recommendations.js" defer></script>
+    <script src="/profile-comparison.js" defer></script>
+    <script>
+      try { document.documentElement.dataset.theme = localStorage.getItem("stress-theme") || "light"; }
+      catch (_error) { document.documentElement.dataset.theme = "light"; }
+    </script>
+    <script src="/theme.js" defer></script>
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#student-input">Skip to student input</a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Explainable AI Stress Prediction System home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-copy"><strong>Stress Prediction</strong><small>Explainable AI Research</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="active" aria-current="page" href="/">Prediction</a>
+        <a href="/analytics">Research Analytics</a>
+      </nav>
+      <div class="header-status" aria-live="polite">
+        <span id="status-dot" class="status-dot is-pending" aria-hidden="true"></span>
+        <span>API Status</span>
+        <strong id="api-status">Checking</strong>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch theme"><span aria-hidden="true">☾</span><span class="theme-label">Dark mode</span></button>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">EXPLAINABLE AI · STUDENT WELLBEING RESEARCH</p>
+          <div class="title-row">
+            <h1 id="page-title">Explainable AI<br>Stress Prediction System</h1>
+            <div class="hero-badges"><span class="prototype-badge">Research Prototype</span><span class="model-badge">SVM + SHAP</span></div>
+          </div>
+          <p class="hero-subtitle">Explore how behavioral, lifestyle, academic and social factors contribute to model-based stress predictions among Sri Lankan university students.</p>
+          <p class="disclaimer"><span aria-hidden="true">ⓘ</span> This system is intended for research purposes and does not provide a medical diagnosis.</p>
+        </div>
+        <aside class="hero-visual" aria-label="Research model visualization">
+          <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+          <div class="visual-node node-one">SVM</div><div class="visual-node node-two">XAI</div><div class="visual-node node-three">AI</div>
+          <span class="visual-caption">Model-based research</span>
+        </aside>
+      </section>
+      <section class="hero-stats" aria-label="Research project facts">
+        <article class="hero-stat"><span class="stat-symbol" aria-hidden="true">N</span><div><strong id="fact-students">—</strong><span>Students</span></div></article>
+        <article class="hero-stat"><span class="stat-symbol" aria-hidden="true">ML</span><div><strong id="fact-models">—</strong><span>ML Models</span></div></article>
+        <article class="hero-stat"><span class="stat-symbol" aria-hidden="true">CV</span><div><strong id="fact-cv">—</strong><span>Nested Stratified CV</span></div></article>
+        <article class="hero-stat"><span class="stat-symbol" aria-hidden="true">XAI</span><div><strong>SHAP</strong><span>Explainable AI</span></div></article>
+      </section>
+
+      <div id="connection-message" class="connection-message" role="status" hidden>
+        Unable to connect to the prediction service. Please make sure the Flask API is running.
+      </div>
+
+      <section class="workspace-grid" aria-label="Prediction workspace">
+        <section class="card input-card" id="student-input" aria-labelledby="form-title">
+          <div class="card-heading">
+            <div>
+              <p class="section-kicker">Student profile</p>
+              <h2 id="form-title">Student Profile</h2>
+            </div>
+            <span class="required-note"><span aria-hidden="true">*</span> Required</span>
+          </div>
+          <p class="form-intro">Enter the factors used by the research model. Inputs are sent to the local research API and are not saved by this page.</p>
+          <div class="form-actions example-actions"><button class="button button-secondary" id="load-example-button" type="button">Load Example</button><span class="example-label">Example research-dataset input</span></div>
+          <p id="schema-loading" class="muted-state">Loading observed ranges and options from model metadata...</p>
+          <p id="schema-error" class="inline-error" role="alert" hidden>Input ranges and categories could not be loaded. Prediction is disabled until the API is available.</p>
+
+          <form id="prediction-form" novalidate>
+            <fieldset class="form-section">
+              <legend><span class="section-index">01</span> Demographic</legend>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="Age">Age <span aria-hidden="true">*</span></label>
+                  <div class="input-with-unit"><input id="Age" name="Age" type="number" inputmode="numeric" required><span>years</span></div>
+                  <small class="field-help" data-help="Age">Age in years.</small>
+                </div>
+                <div class="field">
+                  <label for="Gender">Gender <span aria-hidden="true">*</span></label>
+                    <select id="Gender" name="Gender" required><option value="" selected disabled>Select gender</option></select><small class="field-help" data-help="Gender">Gender category recorded in the research dataset.</small>
+                </div>
+                <div class="field field-wide">
+                  <label for="University">University <span aria-hidden="true">*</span></label>
+                  <select id="University" name="University" required><option value="" selected disabled>Select university</option></select><small class="field-help" data-help="University">University category recorded in the research dataset.</small>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <legend><span class="section-index">02</span> Academic</legend>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="Degree_Program">Degree Program <span aria-hidden="true">*</span></label>
+                  <select id="Degree_Program" name="Degree_Program" required><option value="" selected disabled>Select program</option></select><small class="field-help" data-help="Degree_Program">Degree program category recorded in the research dataset.</small>
+                </div>
+                <div class="field">
+                  <label for="Academic_Year">Academic Year <span aria-hidden="true">*</span></label>
+                  <select id="Academic_Year" name="Academic_Year" required><option value="" selected disabled>Select year</option></select><small class="field-help" data-help="Academic_Year">Academic year category recorded in the research dataset.</small>
+                </div>
+                <div class="field">
+                  <label for="Study_Hours">Study Hours <span aria-hidden="true">*</span></label>
+                  <div class="input-with-unit"><input id="Study_Hours" name="Study_Hours" type="number" inputmode="numeric" required><span>per day</span></div>
+                  <small class="field-help" data-help="Study_Hours">Average daily study time.</small>
+                </div>
+                <div class="field">
+                  <label for="Academic_Pressure">Academic Pressure <span aria-hidden="true">*</span></label>
+                  <select id="Academic_Pressure" name="Academic_Pressure" required><option value="" selected disabled>Select a level</option></select>
+                  <small class="field-help" data-help="Academic_Pressure">Self-reported academic pressure level recorded in the research dataset.</small>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <legend><span class="section-index">03</span> Lifestyle</legend>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="Sleep_Hours">Sleep Hours <span aria-hidden="true">*</span></label>
+                  <div class="input-with-unit"><input id="Sleep_Hours" name="Sleep_Hours" type="number" inputmode="numeric" required><span>per night</span></div>
+                  <small class="field-help" data-help="Sleep_Hours">Average number of hours slept per day.</small>
+                </div>
+                <div class="field">
+                  <label for="Exercise_Frequency">Exercise Frequency <span aria-hidden="true">*</span></label>
+                  <select id="Exercise_Frequency" name="Exercise_Frequency" required><option value="" selected disabled>Select days per week</option></select>
+                  <small class="field-help" data-help="Exercise_Frequency">Number of days with exercise per week.</small>
+                </div>
+                <div class="field">
+                  <label for="Financial_Stress">Financial Stress <span aria-hidden="true">*</span></label>
+                  <select id="Financial_Stress" name="Financial_Stress" required><option value="" selected disabled>Select a level</option></select>
+                  <small class="field-help" data-help="Financial_Stress">Self-reported financial stress level recorded in the research dataset.</small>
+                </div>
+                <div class="field">
+                  <label for="Family_Support">Family Support <span aria-hidden="true">*</span></label>
+                  <select id="Family_Support" name="Family_Support" required><option value="" selected disabled>Select a level</option></select>
+                  <small class="field-help" data-help="Family_Support">Self-reported family support level recorded in the research dataset.</small>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <legend><span class="section-index">04</span> Social &amp; Behavioural</legend>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="Screen_Time_Hours">Screen Time Hours <span aria-hidden="true">*</span></label>
+                  <div class="input-with-unit"><input id="Screen_Time_Hours" name="Screen_Time_Hours" type="number" inputmode="numeric" required><span>per day</span></div>
+                  <small class="field-help" data-help="Screen_Time_Hours">Average daily screen time.</small>
+                </div>
+                <div class="field">
+                  <label for="Social_Media_Hours">Social Media Hours <span aria-hidden="true">*</span></label>
+                  <div class="input-with-unit"><input id="Social_Media_Hours" name="Social_Media_Hours" type="number" inputmode="numeric" required><span>per day</span></div>
+                  <small class="field-help" data-help="Social_Media_Hours">Average daily time spent using social media.</small>
+                </div>
+              </div>
+            </fieldset>
+
+            <div id="form-error" class="inline-error" role="alert" hidden></div>
+            <div class="form-actions">
+              <button class="button button-primary" id="predict-button" type="submit"><span>Predict Stress Level</span><span class="button-arrow" aria-hidden="true">&#8594;</span></button>
+              <button class="button button-secondary" id="reset-button" type="reset">Reset Form</button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="side-column">
+          <section class="card model-card" aria-labelledby="model-title">
+            <div class="card-heading compact-heading">
+              <div><p class="section-kicker">Evaluation context</p><h2 id="model-title">Model Information</h2></div>
+              <span class="model-icon" aria-hidden="true">&#9672;</span>
+            </div>
+            <div id="model-info-loading" class="muted-state">Loading model information...</div>
+            <div id="model-info-error" class="muted-state error-text" hidden>Model information is unavailable while the API is offline.</div>
+            <dl id="model-info-content" class="model-details" hidden>
+              <div><dt>Model</dt><dd id="model-name">&#8212;</dd></div>
+              <div><dt>Selection Criterion</dt><dd id="selection-criterion">&#8212;</dd></div>
+              <div class="metric-row"><dt>Nested CV Macro F1</dt><dd id="macro-f1">&#8212;</dd></div>
+              <div class="metric-row"><dt>Nested CV Balanced Accuracy</dt><dd id="balanced-accuracy">&#8212;</dd></div>
+              <div><dt>Target</dt><dd id="target-name">&#8212;</dd></div>
+              <div><dt>Classes</dt><dd id="class-names">&#8212;</dd></div>
+            </dl>
+            <p class="evaluation-note">Research evaluation metrics describe nested cross-validation results; they are not prediction accuracy or a confidence score for an individual.</p>
+          </section>
+
+          <section id="result-card" class="card result-card" aria-labelledby="result-title" aria-live="polite" hidden>
+            <div class="card-heading compact-heading">
+              <div><p class="section-kicker">STRESS ASSESSMENT</p><h2 id="result-title">Predicted Stress Level</h2></div>
+              <span class="result-icon" aria-hidden="true">&#8599;</span>
+            </div>
+            <p class="result-label">Based on the submitted research profile</p>
+            <p id="predicted-level" class="predicted-level">&#8212;</p>
+            <div id="probability-section" class="probability-section" hidden>
+              <h3>Model-predicted probabilities</h3>
+              <div id="probability-list"></div>
+              <p class="evaluation-note">These probabilities represent the model's output and should not be interpreted as clinical certainty.</p>
+            </div>
+            <section id="input-quality" class="input-quality" aria-live="polite" hidden><h3>Input Quality: <span id="input-quality-status"></span></h3><p id="input-quality-message"></p><small id="input-quality-method"></small></section>
+            <p id="predict-error" class="inline-error" role="alert" hidden></p>
+            <button class="button button-primary explain-button" id="explain-button" type="button" disabled>Explain This Prediction</button>
+          </section>
+
+          <section id="recommendation-card" class="card recommendation-card" aria-labelledby="recommendation-title" aria-live="polite" hidden>
+            <div class="card-heading compact-heading"><div><p class="section-kicker">Personalized wellness guidance</p><h2 id="recommendation-title">Personalized Stress Reduction Recommendations</h2></div><span id="recommendation-level" class="stress-badge"></span></div>
+            <p id="recommendation-explanation" class="recommendation-intro"></p>
+            <div class="priority-area"><span>Priority areas</span><div id="priority-tags" class="priority-tags"></div></div>
+            <ol id="recommendation-list" class="recommendation-list"></ol>
+            <p id="high-stress-support" class="high-stress-support" hidden></p>
+            <p id="recommendation-disclaimer" class="recommendation-disclaimer"></p>
+          </section>
+
+          <section id="explanation-card" class="card explanation-card" aria-labelledby="explanation-title" aria-live="polite" hidden>
+            <div class="card-heading compact-heading">
+              <div><p class="section-kicker">Explainable AI</p><h2 id="explanation-title">Why did the model make this prediction?</h2></div>
+            </div>
+            <p id="explained-class" class="explained-class"></p>
+            <p class="chart-help">Contribution to the model prediction ? positive and negative SHAP values are shown on opposite sides of zero.</p>
+            <div id="shap-chart" class="shap-chart" role="list" aria-label="Feature contributions returned by SHAP"></div>
+            <p id="explanation-note" class="evaluation-note"></p>
+            <p id="explain-error" class="inline-error" role="alert" hidden></p>
+          </section>
+
+          <section id="stress-visualization-card" class="card stress-visualization-card" aria-labelledby="stress-visualization-title" hidden>
+            <div class="card-heading compact-heading"><div><p class="section-kicker">Profile comparison</p><h2 id="stress-visualization-title">Current Profile vs Reference Dataset Profile</h2></div><span class="result-icon" aria-hidden="true">&#9635;</span></div>
+            <p id="visualization-idle" class="visualization-idle">Enter student information and run a prediction to compare profiles.</p>
+            <div id="visualization-content" hidden>
+              <p class="chart-axis-label">Relative position within observed dataset range (%)</p>
+              <div class="comparison-legend" aria-label="Chart legend"><span><i class="legend-current"></i>Current Profile</span><span><i class="legend-reference"></i>Reference Dataset Profile</span></div>
+              <div id="profile-comparison-chart" class="profile-comparison-chart" role="list" aria-label="Current profile compared with the reference dataset profile"></div>
+              <p id="profile-comparison-tooltip" class="profile-comparison-tooltip" role="status" aria-live="polite"></p>
+              <p id="current-profile-summary" class="profile-comparison-summary" role="status" aria-live="polite"></p>
+              <p id="visualization-text-summary" class="visualization-text-summary" role="status" aria-live="polite"></p>
+              <p class="visualization-disclaimer">This visualization compares the submitted profile with a reference profile derived from the research dataset. It does not represent a clinical normal range or causal relationship.</p>
+            </div>
+          </section>
+        </aside>
+      </section>
+
+      <section class="research-limitation" aria-labelledby="limitation-title"><h2 id="limitation-title">Research limitations</h2><p>The model was trained using data collected from Sri Lankan university students. Its performance may differ for populations or situations that differ from the training data.</p><p>This system is a research prototype and does not provide a medical diagnosis.</p></section>
+      <footer class="page-footer">
+        <span>Explainable AI Stress Prediction System · Research Prototype</span>
+        <span>Sri Lankan university-student research · Not a medical diagnosis</span>
+      </footer>
+    </main>
+  </body>
+</html>

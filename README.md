@@ -1,185 +1,92 @@
-# Stress Prediction XAI
+# A Comparative Explainable AI Framework for Stress Prediction
 
-## Project Title
+**Research title:** *A Comparative Explainable AI Framework for Stress Prediction Using Behavioral, Lifestyle, and Social Media Analytics Among Sri Lankan University Students*
 
-**A Comparative Explainable AI Framework for Stress Prediction Using Behavioral, Lifestyle, and Social Media Analytics Among Sri Lankan University Students**
+## Research objective
 
----
-
-## Overview
-
-This repository contains the implementation and supporting resources for the research project titled **"A Comparative Explainable AI Framework for Stress Prediction Using Behavioral, Lifestyle, and Social Media Analytics Among Sri Lankan University Students."**
-
-The project aims to develop an Explainable Artificial Intelligence (XAI)-based machine learning framework to predict stress levels among Sri Lankan university students using demographic, lifestyle, academic, behavioural, social media, and psychological factors. The framework integrates Explainable AI techniques to improve transparency and interpretability of the prediction results.
-
----
-
-## Research Objective
-
-To develop and evaluate an Explainable Artificial Intelligence (XAI)-based framework for predicting stress levels among Sri Lankan university students and identify the key factors that influence stress prediction.
-
----
-
-## Features
-
-- Data preprocessing
-- Data cleaning
-- Feature engineering
-- Machine learning model development
-- Comparative model evaluation
-- Explainable AI using SHAP
-- Stress prediction analysis
-- Performance evaluation
-
----
-
-## Project Structure
-
-```text
-stress-prediction-xai/
-│
-├── dataset/
-│   ├── raw/
-│   └── processed/
-│
-├── preprocessing/
-│
-├── models/
-│
-├── explainability/
-│
-├── notebooks/
-│
-├── results/
-│
-├── images/
-│
-├── README.md
-├── requirements.txt
-├── LICENSE
-└── .gitignore
-```
-
----
-
-## Machine Learning Models
-
-The following machine learning algorithms will be evaluated and compared:
-
-- Logistic Regression
-- Support Vector Machine (SVM)
-- Random Forest
-- XGBoost
-
-The best-performing model will be selected based on standard evaluation metrics.
-
----
-
-## Explainable Artificial Intelligence (XAI)
-
-The selected machine learning model will be interpreted using **SHAP (SHapley Additive exPlanations)** to explain how each feature contributes to the predicted stress level. This improves model transparency, interpretability, and trustworthiness.
-
----
+This project implements a reproducible framework to predict PSS-10-derived stress categories from demographic, academic, behavioural, lifestyle, and social media variables collected from Sri Lankan university students. It compares four baseline classifiers and includes separate imbalance-aware and nested-CV experiments. The exported application SVM was selected using nested-CV Macro F1, with Balanced Accuracy as a tie-breaker; the baseline comparison uses its separately documented held-out selection rule.
 
 ## Dataset
 
-The dataset consists of questionnaire responses collected from Sri Lankan university students through a structured Google Form.
+The source file is `dataset/raw/Stress Prediction Form.csv` (1,500 responses, 25 columns at the time of implementation). The original raw file is never modified. The form contains `PSS_Q1` through `PSS_Q10` with integer responses from 0 to 4 and no pre-existing score or target.
 
-The questionnaire includes:
+The preprocessing script reverse-scores `PSS_Q4`, `PSS_Q5`, `PSS_Q7`, and `PSS_Q8` as `4 - response`; the other six responses remain unchanged. It sums the scored items into `PSS10_Total`, validated to be between 0 and 40, and assigns `Stress_Level` using the research implementation's categories: Low Stress 0–13, Moderate Stress 14–26, High Stress 27–40. The processed file retains the original item responses alongside the score and target. The observed totals in this dataset range from 7 to 33; the observed class counts are written by preprocessing and can be regenerated from the processed data.
 
-- Demographic Information
-- Academic Factors
-- Lifestyle Factors
-- Behavioural Factors
-- Social Media Usage
-- Perceived Stress Scale (PSS-10)
+## Predictors and leakage prevention
 
-The collected responses are exported as CSV files and processed before model training.
+Predictors currently comprise `Age`, `Gender`, `University`, `Degree_Program`, `Academic_Year`, `Sleep_Hours`, `Exercise_Frequency`, `Screen_Time_Hours`, `Social_Media_Hours`, `Study_Hours`, `Academic_Pressure`, `Financial_Stress`, and `Family_Support`. `Timestamp` and `Consent` are administrative fields. `PSS_Q1`–`PSS_Q10` and `PSS10_Total` are excluded because the target is derived from those responses. These exclusions are recorded in `results/metrics/run_metadata.json` after model evaluation.
 
----
+Exact duplicate rows are removed. No missing values or duplicates were present in the inspected source. For future data, numeric median imputation, categorical most-frequent imputation, categorical one-hot encoding, and (for Logistic Regression and SVM) numeric scaling are fitted inside sklearn pipelines. Thus, train/test evaluation and each CV fold fit preprocessing only on their training partition. No blanket outlier removal is applied; observed numeric values were within plausible ranges for the recorded variables.
 
-## Technologies
+## Models and evaluation
 
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- XGBoost
-- SHAP
-- Matplotlib
-- Jupyter Notebook
-- Google Forms
+Baseline models are Logistic Regression, Support Vector Machine with probability estimates, Random Forest, and XGBoost. A fixed stratified 80/20 holdout split with random state 42 is shared by all models. The evaluator reports accuracy, balanced accuracy, weighted precision, weighted recall, weighted and macro F1, and weighted one-vs-rest multiclass ROC-AUC, along with per-model classification reports and confusion matrices. Class frequencies remain unchanged; no resampling is applied.
 
----
+Stratified 10-fold cross-validation uses shuffling and random state 42. It reports means and standard deviations for accuracy, balanced accuracy, macro and weighted precision/recall/F1, and macro and weighted one-vs-rest ROC-AUC. Macro F1 is the predefined primary criterion for ranking the held-out models, with weighted F1 as a tie-breaker; the selected classifier is then used for SHAP. This is a baseline comparison, not a claim of general superiority.
 
-## Evaluation Metrics
+### Prediction-behavior limitation
 
-The machine learning models will be evaluated using:
+The target is imbalanced: Moderate Stress has 1,306 of 1,500 observations, compared with 96 Low Stress and 98 High Stress. In an inference-only check, three substantially different valid synthetic profiles all received a Moderate Stress prediction, while their class probabilities differed. One-feature-at-a-time checks across valid minimum and maximum values changed probabilities for all eight tested lifestyle/academic features, and some values changed the predicted class. The API and frontend consistently display the saved SVM output; the application does not force class variation. Frequent Moderate predictions should therefore be treated as a limitation of the current model and data distribution.
 
-- Accuracy
-- Precision
-- Recall
-- F1-Score
-- ROC-AUC
+SHAP uses TreeExplainer for Random Forest/XGBoost, LinearExplainer for Logistic Regression, and KernelExplainer for SVM. It creates global importance and summary plots plus feature contributions for one held-out prediction. SHAP values describe the fitted model; they do not establish causal effects.
 
-Model validation will be performed using **Stratified 10-Fold Cross-Validation**.
+## Project structure
 
----
+```text
+dataset/
+  raw/                 Original Google Forms export (not modified)
+  processed/           Scored dataset generated by preprocessing
+preprocessing/
+  preprocess.py        Dataset inspection, cleaning, PSS-10 scoring
+models/
+  logistic_regression.py
+  svm.py
+  random_forest.py
+  xgboost_model.py
+  train_evaluate.py    Shared pipelines, holdout comparison and CV
+explainability/
+  shap_analysis.py
+results/
+  figures/             Class distribution, model comparison, confusion matrices, ROC
+  metrics/             Classification reports, comparison and CV tables
+  shap_plots/          SHAP figures and feature contribution tables
+```
 
-## Current Status
+## Installation and running
 
-- Repository Created
-- Project Structure Completed
-- Dataset Collection in Progress
-- Data Preprocessing
-- Milestone 2 Development Completed
-- Model Development (Upcoming)
-- SHAP Explainability (Upcoming)
+Use **CPython 3.12** for this project. The compatible dependency versions are pinned in `requirements.txt`. On Windows, create and activate an isolated environment from the repository root:
 
----
+```powershell
+py -3.12 -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python --version
+python -m pip list
+python preprocessing/preprocess.py
+python -m models.train_evaluate
+python -m explainability.shap_analysis
+```
 
-## Proposed System Architecture
+Run commands from the repository root. Preprocessing writes `dataset/processed/cleaned_stress_dataset.csv`, `results/metrics/class_distribution.csv`, and `results/figures/class_distribution.png`. Evaluation writes comparison and CV tables, per-model reports and confusion matrix tables under `results/metrics/`; plots are under `results/figures/`. SHAP outputs are written to `results/shap_plots/`.
 
-The following figure illustrates the overall workflow of the proposed Explainable AI-based Stress Prediction Framework.
+The raw and processed participant datasets are intentionally excluded from Git. Reproduction requires an authorized copy of the source CSV at `dataset/raw/Stress Prediction Form.csv`. The source is not included with the code repository.
 
-![System Architecture](images/architecture_diagram.png)
+### Additional research experiments
 
-**Figure 1. Proposed System Architecture of the Explainable AI-based Stress Prediction Framework**
+The separate experiments can be run from the repository root with the same Python 3.12 environment:
 
----
+```powershell
+python -m experiments.nested_stratified_cv
+python -m experiments.imbalance_aware_research
+python -m experiments.improved_imbalance_cv
+python -m experiments.three_class_improvement
+```
 
-## Repository
+These scripts write under `results/`. Run them in a separate working copy with the authorized dataset and preserve the existing frozen outputs before execution; do not run them over the archived research results. The three-class improvement experiment also produces SHAP outputs and a separate candidate artifact. The application continues to load only `application/artifacts/final_svm_pipeline.joblib` unless that artifact is deliberately changed in a separately reviewed deployment decision.
 
-GitHub Repository:
+Run the existing checks from the repository root with `python -m unittest discover -s tests` and `node --test tests/*.test.js`.
 
-**https://github.com/ISURUNIMESH/stress-prediction-xai**
+## Current status
 
----
-
-## Project Team
-
-**K I Nimesh**  
-Student ID: **ITBIN-2313-0071**
-
-**H A R Nawanjala**  
-Student ID: **ITBIN-2313-0068**
-
----
-
-## License
-
-This project is licensed under the **MIT License**.
-
----
-
-## Future Work
-
-The repository will be continuously updated throughout the research project. Future updates will include:
-
-- Data preprocessing implementation
-- Exploratory Data Analysis (EDA)
-- Machine learning model implementation
-- Model comparison
-- SHAP explainability analysis
-- Experimental results
-- Final research documentation
+The project pins its environment for CPython 3.12 in `requirements.txt` and `.python-version`. The repository workspace contains generated baseline, imbalance-aware, nested-CV, three-class-improvement, and SHAP outputs under `results/`; these are frozen research artifacts and should be preserved. The raw and processed participant datasets are local inputs and are not Git-tracked. See the experiment instructions above before reproducing any run.

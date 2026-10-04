@@ -1,0 +1,9 @@
+model,metric,estimate,ci_95_lower,ci_95_upper,method,random_state
+Logistic Regression,f1_macro,0.24956825705488805,0.20784075461599044,0.29659618599847676,"stratified percentile bootstrap, 2000 replicates",42
+Logistic Regression,balanced_accuracy,0.3458123277542515,0.2522471768501714,0.449331098339719,"stratified percentile bootstrap, 2000 replicates",42
+SVM,f1_macro,0.3243599092529574,0.275138771314222,0.38081992269787696,"stratified percentile bootstrap, 2000 replicates",42
+SVM,balanced_accuracy,0.32989850104187673,0.26409558378705383,0.4077352624857162,"stratified percentile bootstrap, 2000 replicates",42
+Random Forest,f1_macro,0.31016042780748665,0.31016042780748665,0.31016042780748665,"stratified percentile bootstrap, 2000 replicates",42
+Random Forest,balanced_accuracy,0.3333333333333333,0.3333333333333333,0.3333333333333333,"stratified percentile bootstrap, 2000 replicates",42
+XGBoost,f1_macro,0.32109656377949064,0.27483030191299906,0.37447685366128125,"stratified percentile bootstrap, 2000 replicates",42
+XGBoost,balanced_accuracy,0.3186764804732137,0.2656449553001277,0.38064798010351547,"stratified percentile bootstrap, 2000 replicates",42

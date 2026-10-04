@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5fb">
+    <meta name="description" content="Research evaluation and explainability results for the student stress prediction prototype.">
+    <title>Research Analytics | Stress Prediction</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/analytics.css">
+    <script>
+      try { document.documentElement.dataset.theme = localStorage.getItem("stress-theme") || "light"; }
+      catch (_error) { document.documentElement.dataset.theme = "light"; }
+    </script>
+    <script src="/theme.js" defer></script>
+    <script src="/analytics.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#analytics-main">Skip to research analytics</a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Explainable AI Stress Prediction System home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-copy"><strong>Stress Prediction</strong><small>Research prototype</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Prediction</a>
+        <a class="active" aria-current="page" href="/analytics">Research Analytics</a>
+      </nav>
+      <span class="prototype-badge">Research Results</span>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch theme"><span aria-hidden="true">&#9790;</span><span class="theme-label">Dark mode</span></button>
+    </header>
+
+    <main id="analytics-main" class="page-shell analytics-shell">
+      <section class="analytics-hero" aria-labelledby="analytics-title">
+        <p class="eyebrow">Evaluation and methodology</p>
+        <h1 id="analytics-title">Research Analytics</h1>
+        <p>Generated research outputs for the selected student stress prediction pipeline. Metrics are read from the saved experiment files.</p>
+      </section>
+      <section class="analytics-kpis" aria-label="Research overview" aria-live="polite">
+        <article class="analytics-kpi card"><span>Dataset</span><strong id="kpi-students">—</strong><small>students</small></article>
+        <article class="analytics-kpi card"><span>Selected Model</span><strong id="kpi-model">—</strong><small>nested-CV selection</small></article>
+        <article class="analytics-kpi card"><span>Nested CV Macro F1</span><strong id="kpi-macro-f1">—</strong><small>mean ± standard deviation</small></article>
+        <article class="analytics-kpi card"><span>Balanced Accuracy</span><strong id="kpi-balanced-accuracy">—</strong><small>mean ± standard deviation</small></article>
+      </section>
+      <div id="analytics-loading" class="card" role="status">Loading generated research results...</div>
+      <div id="analytics-errors" class="connection-message" role="status" hidden></div>
+      <div id="analytics-content" hidden>
+        <section class="analytics-section" aria-labelledby="dataset-heading">
+          <div class="section-title"><p class="section-kicker">01 / Sample</p><h2 id="dataset-heading">Dataset Overview</h2></div>
+          <div class="analytics-grid overview-grid">
+            <article class="card overview-card"><span class="overview-label">Students in generated class distribution</span><strong id="total-students">—</strong></article>
+            <article class="card distribution-card"><h3>Class distribution</h3><div id="class-distribution" class="class-distribution"></div><p class="imbalance-note">Class proportions are shown as observed; the dataset is highly imbalanced.</p></article>
+          </div>
+        </section>
+
+        <section class="analytics-section" aria-labelledby="selected-heading">
+          <div class="section-title"><p class="section-kicker">02 / Selection</p><h2 id="selected-heading">Selected Model</h2></div>
+          <div class="card selected-model-card">
+            <div><span class="overview-label">Model selected from nested cross-validation</span><h3 id="selected-model-name">—</h3><p id="selection-criterion" class="muted-state"></p></div>
+            <div class="research-metrics"><div><span>Nested CV Macro F1</span><strong id="selected-macro-f1">—</strong></div><div><span>Nested CV Balanced Accuracy</span><strong id="selected-balanced-accuracy">—</strong></div></div>
+            <p class="metric-disclaimer">Research evaluation metrics. These are internal validation estimates, not prediction accuracy or individual confidence.</p>
+          </div>
+        </section>
+
+        <section class="analytics-section" aria-labelledby="comparison-heading">
+          <div class="section-title"><p class="section-kicker">03 / Comparative evaluation</p><h2 id="comparison-heading">Model Comparison</h2></div>
+          <article class="card">
+            <p class="chart-note">Nested cross-validation mean scores. Bars share a 0–1 scale; values are shown beside each bar.</p>
+            <div class="chart-legend"><span><i class="legend-macro"></i>Macro F1</span><span><i class="legend-balanced"></i>Balanced Accuracy</span></div>
+            <div id="model-comparison-chart" class="metric-chart" aria-label="Nested cross-validation model comparison"></div>
+            <p class="source-note">Source: results/nested_cv/nested_cv_results.csv</p>
+          </article>
+        </section>
+
+        <section class="analytics-section" aria-labelledby="ablation-heading">
+          <div class="section-title"><p class="section-kicker">04 / Feature groups</p><h2 id="ablation-heading">Ablation Study</h2></div>
+          <article class="card">
+            <p class="chart-note">Exploratory feature-group analysis. Differences do not establish causal feature importance.</p>
+            <div class="table-scroll"><table><thead><tr><th>Configuration</th><th>Features</th><th>Macro F1 (mean ± SD)</th><th>Balanced Accuracy (mean ± SD)</th></tr></thead><tbody id="ablation-rows"></tbody></table></div>
+            <p class="source-note">Source: results/imbalance_aware/ablation/ablation_results.csv</p>
+          </article>
+        </section>
+
+        <section class="analytics-section" aria-labelledby="shap-heading">
+          <div class="section-title"><p class="section-kicker">05 / Explainability</p><h2 id="shap-heading">Global SHAP Feature Importance</h2></div>
+          <article class="card">
+            <p id="shap-model-note" class="chart-note"></p>
+            <div id="shap-importance-chart" class="shap-importance-chart"></div>
+            <p class="causal-note">SHAP values describe model contributions and do not establish causality.</p>
+            <p class="source-note">Source: results/imbalance_aware/shap/global_feature_importance.csv</p>
+          </article>
+        </section>
+
+        <section class="analytics-section" aria-labelledby="validation-heading">
+          <div class="section-title"><p class="section-kicker">06 / Protocol</p><h2 id="validation-heading">Validation Methods</h2></div>
+          <article class="card"><h3>Validation performed</h3><ul id="validation-methods" class="method-list"></ul><p class="internal-validation-note">Nested cross-validation is internal validation and does not constitute external validation.</p></article>
+        </section>
+
+        <section class="analytics-section" aria-labelledby="limitations-heading">
+          <div class="section-title"><p class="section-kicker">07 / Interpretation</p><h2 id="limitations-heading">Research Limitations</h2></div>
+          <article class="card"><ul id="research-limitations" class="limitation-list"></ul></article>
+        </section>
+      </div>
+      <footer class="page-footer"><span>Explainable AI Stress Prediction System</span><span>Research prototype · Not a medical diagnosis</span></footer>
+    </main>
+  </body>
+</html>

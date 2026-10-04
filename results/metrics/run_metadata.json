@@ -1,0 +1,65 @@
+{
+  "features_used": [
+    "Age",
+    "Gender",
+    "University",
+    "Degree_Program",
+    "Academic_Year",
+    "Sleep_Hours",
+    "Exercise_Frequency",
+    "Screen_Time_Hours",
+    "Social_Media_Hours",
+    "Study_Hours",
+    "Academic_Pressure",
+    "Financial_Stress",
+    "Family_Support"
+  ],
+  "excluded_columns": {
+    "Timestamp": "Administrative field, not a predictive response",
+    "Consent": "Administrative field, not a predictive response",
+    "PSS10_Total": "Excluded to prevent target leakage from PSS-derived Stress_Level",
+    "Stress_Level": "Target column",
+    "PSS_Q1": "Excluded to prevent target leakage from PSS-derived Stress_Level",
+    "PSS_Q2": "Excluded to prevent target leakage from PSS-derived Stress_Level",
+    "PSS_Q3": "Excluded to prevent target leakage from PSS-derived Stress_Level",
+    "PSS_Q4": "Excluded to prevent target leakage from PSS-derived Stress_Level",
+    "PSS_Q5": "Excluded to prevent target leakage from PSS-derived Stress_Level",
+    "PSS_Q6": "Excluded to prevent target leakage from PSS-derived Stress_Level",
+    "PSS_Q7": "Excluded to prevent target leakage from PSS-derived Stress_Level",
+    "PSS_Q8": "Excluded to prevent target leakage from PSS-derived Stress_Level",
+    "PSS_Q9": "Excluded to prevent target leakage from PSS-derived Stress_Level",
+    "PSS_Q10": "Excluded to prevent target leakage from PSS-derived Stress_Level"
+  },
+  "target": "Stress_Level",
+  "test_size": 0.2,
+  "random_state": 42,
+  "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "package_versions": {
+    "pandas": "2.2.3",
+    "numpy": "2.2.6",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.2",
+    "shap": "0.48.0",
+    "matplotlib": "3.10.8",
+    "seaborn": "0.13.2"
+  },
+  "classes": [
+    "High Stress",
+    "Low Stress",
+    "Moderate Stress"
+  ],
+  "class_encoding": {
+    "High Stress": 0,
+    "Low Stress": 1,
+    "Moderate Stress": 2
+  },
+  "class_counts": {
+    "High Stress": 98,
+    "Low Stress": 96,
+    "Moderate Stress": 1306
+  },
+  "selected_for_shap_by": "highest held-out macro F1, weighted F1 tie-breaker",
+  "selected_for_shap": "SVM",
+  "shap_model": "SVM",
+  "shap_explainer": "KernelExplainer"
+}

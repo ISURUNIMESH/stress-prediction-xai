@@ -1,0 +1,69 @@
+model,metric,mean,std,n_outer_folds,ci_95_lower,ci_95_upper,ci_note
+Logistic Regression,accuracy,0.3546666666666667,0.04388115262337074,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+Logistic Regression,balanced_accuracy,0.3577503313429665,0.06253009095294237,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+Logistic Regression,precision_macro,0.33736057998400554,0.017198995767095795,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+Logistic Regression,recall_macro,0.3577503313429665,0.06253009095294237,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+Logistic Regression,f1_macro,0.24728340629315548,0.03325653929862994,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+Logistic Regression,f1_weighted,0.45229821161127826,0.042535636032803144,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+Logistic Regression,roc_auc_macro_ovr,0.5004315266053803,0.03150548644567943,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+Logistic Regression,roc_auc_weighted_ovr,0.47290622164042284,0.032856661154569505,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+Logistic Regression,High Stress_precision,0.08225335149197997,0.020255106507257602,5,,,Not reported: five outer folds; exploratory fold variability only.
+Logistic Regression,High Stress_recall,0.4173684210526316,0.12534716333982482,5,,,Not reported: five outer folds; exploratory fold variability only.
+Logistic Regression,High Stress_f1,0.137050606127207,0.03428039161581307,5,,,Not reported: five outer folds; exploratory fold variability only.
+Logistic Regression,Low Stress_precision,0.06240308154835432,0.02631962990264635,5,,,Not reported: five outer folds; exploratory fold variability only.
+Logistic Regression,Low Stress_recall,0.3021052631578947,0.10770843993504407,5,,,Not reported: five outer folds; exploratory fold variability only.
+Logistic Regression,Low Stress_f1,0.10318737940050296,0.042130555545460475,5,,,Not reported: five outer folds; exploratory fold variability only.
+Logistic Regression,Moderate Stress_precision,0.8674253069116823,0.019428384838227744,5,,,Not reported: five outer folds; exploratory fold variability only.
+Logistic Regression,Moderate Stress_recall,0.35377730981837324,0.0436289167734686,5,,,Not reported: five outer folds; exploratory fold variability only.
+Logistic Regression,Moderate Stress_f1,0.5016122333517566,0.04591051743637216,5,,,Not reported: five outer folds; exploratory fold variability only.
+SVM,accuracy,0.7686666666666666,0.015383974345619087,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+SVM,balanced_accuracy,0.34510755626159956,0.02415686741735075,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+SVM,precision_macro,0.34229341961792087,0.022765406287100966,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+SVM,recall_macro,0.34510755626159956,0.02415686741735075,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+SVM,f1_macro,0.3425265445837976,0.02151743133261998,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+SVM,f1_weighted,0.7675816080041056,0.01065180479399321,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+SVM,roc_auc_macro_ovr,0.5199055172039431,0.03322199200083443,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+SVM,roc_auc_weighted_ovr,0.48538615087540915,0.059156625470167666,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+SVM,High Stress_precision,0.06742581090407176,0.025757243186511087,5,,,Not reported: five outer folds; exploratory fold variability only.
+SVM,High Stress_recall,0.07105263157894737,0.02644704110821287,5,,,Not reported: five outer folds; exploratory fold variability only.
+SVM,High Stress_f1,0.0691375266361086,0.02608386602527209,5,,,Not reported: five outer folds; exploratory fold variability only.
+SVM,Low Stress_precision,0.09010025062656642,0.08682682401617095,5,,,Not reported: five outer folds; exploratory fold variability only.
+SVM,Low Stress_recall,0.09368421052631579,0.10775986435427139,5,,,Not reported: five outer folds; exploratory fold variability only.
+SVM,Low Stress_f1,0.08860582306830907,0.09044297326239194,5,,,Not reported: five outer folds; exploratory fold variability only.
+SVM,Moderate Stress_precision,0.8693541973231245,0.009645392109951391,5,,,Not reported: five outer folds; exploratory fold variability only.
+SVM,Moderate Stress_recall,0.8705858266795357,0.021304948843226434,5,,,Not reported: five outer folds; exploratory fold variability only.
+SVM,Moderate Stress_f1,0.8698362840469752,0.011539818454948088,5,,,Not reported: five outer folds; exploratory fold variability only.
+Random Forest,accuracy,0.8699999999999999,0.0023570226039551345,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+Random Forest,balanced_accuracy,0.3330779054916986,0.0005711540172413221,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+Random Forest,precision_macro,0.2901932367149759,0.0005169307864500634,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+Random Forest,recall_macro,0.3330779054916986,0.0005711540172413221,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+Random Forest,f1_macro,0.31015997469838796,0.00044935654246202917,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+Random Forest,f1_weighted,0.810139123523884,0.0024252973435244106,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+Random Forest,roc_auc_macro_ovr,0.5158245745731063,0.03508464390210247,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+Random Forest,roc_auc_weighted_ovr,0.47796336396013295,0.04085791385916424,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+Random Forest,High Stress_precision,0.0,0.0,5,,,Not reported: five outer folds; exploratory fold variability only.
+Random Forest,High Stress_recall,0.0,0.0,5,,,Not reported: five outer folds; exploratory fold variability only.
+Random Forest,High Stress_f1,0.0,0.0,5,,,Not reported: five outer folds; exploratory fold variability only.
+Random Forest,Low Stress_precision,0.0,0.0,5,,,Not reported: five outer folds; exploratory fold variability only.
+Random Forest,Low Stress_recall,0.0,0.0,5,,,Not reported: five outer folds; exploratory fold variability only.
+Random Forest,Low Stress_f1,0.0,0.0,5,,,Not reported: five outer folds; exploratory fold variability only.
+Random Forest,Moderate Stress_precision,0.8705797101449274,0.0015507923593501836,5,,,Not reported: five outer folds; exploratory fold variability only.
+Random Forest,Moderate Stress_recall,0.9992337164750957,0.0017134620517239912,5,,,Not reported: five outer folds; exploratory fold variability only.
+Random Forest,Moderate Stress_f1,0.9304799240951638,0.0013480696273860874,5,,,Not reported: five outer folds; exploratory fold variability only.
+XGBoost,accuracy,0.6839999999999999,0.0726253705287928,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+XGBoost,balanced_accuracy,0.3191895322817587,0.025964652811163436,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+XGBoost,precision_macro,0.32085273419097915,0.020266159721398117,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+XGBoost,recall_macro,0.3191895322817587,0.025964652811163436,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+XGBoost,f1_macro,0.31360890943405273,0.025542628079756633,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+XGBoost,f1_weighted,0.7147700322772778,0.04759829850357221,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+XGBoost,roc_auc_macro_ovr,0.5328841600458399,0.03215202953584322,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+XGBoost,roc_auc_weighted_ovr,0.4892835876876241,0.039560235986820284,5,,,Not reported: five overlapping outer-CV training sets do not support a reliable independent-fold CI.
+XGBoost,High Stress_precision,0.055208569995804035,0.013530736922829724,5,,,Not reported: five outer folds; exploratory fold variability only.
+XGBoost,High Stress_recall,0.09210526315789473,0.023684210526315787,5,,,Not reported: five outer folds; exploratory fold variability only.
+XGBoost,High Stress_f1,0.06825191439354666,0.015700234542103873,5,,,Not reported: five outer folds; exploratory fold variability only.
+XGBoost,Low Stress_precision,0.04782386072708653,0.047706508386995854,5,,,Not reported: five outer folds; exploratory fold variability only.
+XGBoost,Low Stress_recall,0.09368421052631579,0.09403246919632545,5,,,Not reported: five outer folds; exploratory fold variability only.
+XGBoost,Low Stress_f1,0.06128542615349427,0.05895621125452183,5,,,Not reported: five outer folds; exploratory fold variability only.
+XGBoost,Moderate Stress_precision,0.8595257718500469,0.009221135372830362,5,,,Not reported: five outer folds; exploratory fold variability only.
+XGBoost,Moderate Stress_recall,0.7717791231610658,0.08833555120685381,5,,,Not reported: five outer folds; exploratory fold variability only.
+XGBoost,Moderate Stress_f1,0.8112893877551173,0.055283447014511454,5,,,Not reported: five outer folds; exploratory fold variability only.

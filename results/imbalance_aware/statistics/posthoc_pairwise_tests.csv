@@ -1,0 +1,7 @@
+metric,model_a,model_b,wilcoxon_statistic,p_value_raw,median_paired_difference_a_minus_b,p_value_holm,significant_holm_0_05
+f1_macro,Logistic Regression,Random Forest,0.0,0.001953125,-0.06531027803567803,0.01171875,True
+f1_macro,Logistic Regression,SVM,0.0,0.001953125,-0.09696196733601994,0.01171875,True
+f1_macro,Logistic Regression,XGBoost,2.0,0.005859375,-0.09140622973486125,0.0234375,True
+f1_macro,Random Forest,SVM,9.0,0.064453125,-0.013803660589097905,0.193359375,False
+f1_macro,Random Forest,XGBoost,17.0,0.322265625,-0.007803063389505038,0.64453125,False
+f1_macro,SVM,XGBoost,25.0,0.845703125,-0.002833924943713123,0.845703125,False

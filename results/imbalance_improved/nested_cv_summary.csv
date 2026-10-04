@@ -1,0 +1,61 @@
+model,metric,mean,std,outer_folds,interval
+Current SVM,accuracy,0.7686666666666666,0.015383974345619087,5,Not calculated; five CV folds are not independent participants.
+Current SVM,balanced_accuracy,0.34510755626159956,0.02415686741735075,5,Not calculated; five CV folds are not independent participants.
+Current SVM,macro_f1,0.3425265445837976,0.02151743133261998,5,Not calculated; five CV folds are not independent participants.
+Current SVM,macro_precision,0.34229341961792087,0.022765406287100966,5,Not calculated; five CV folds are not independent participants.
+Current SVM,macro_recall,0.34510755626159956,0.02415686741735075,5,Not calculated; five CV folds are not independent participants.
+Current SVM,weighted_f1,0.7675816080041056,0.01065180479399321,5,Not calculated; five CV folds are not independent participants.
+Current SVM,low_recall,0.09368421052631579,0.10775986435427139,5,Not calculated; five CV folds are not independent participants.
+Current SVM,moderate_recall,0.8705858266795357,0.021304948843226434,5,Not calculated; five CV folds are not independent participants.
+Current SVM,high_recall,0.07105263157894737,0.02644704110821287,5,Not calculated; five CV folds are not independent participants.
+Current SVM,roc_auc,0.5135992771731335,0.03199423598933564,5,Not calculated; five CV folds are not independent participants.
+RandomOverSampler + SVM,accuracy,0.826,0.009545214042184226,5,Not calculated; five CV folds are not independent participants.
+RandomOverSampler + SVM,balanced_accuracy,0.33540250409592764,0.01259194979548239,5,Not calculated; five CV folds are not independent participants.
+RandomOverSampler + SVM,macro_f1,0.3292189042718921,0.018952817410880448,5,Not calculated; five CV folds are not independent participants.
+RandomOverSampler + SVM,macro_precision,0.3310646004235102,0.02997659942020834,5,Not calculated; five CV folds are not independent participants.
+RandomOverSampler + SVM,macro_recall,0.33540250409592764,0.01259194979548239,5,Not calculated; five CV folds are not independent participants.
+RandomOverSampler + SVM,weighted_f1,0.7943011989607224,0.007459797568759572,5,Not calculated; five CV folds are not independent participants.
+RandomOverSampler + SVM,low_recall,0.021052631578947368,0.02882750302658769,5,Not calculated; five CV folds are not independent participants.
+RandomOverSampler + SVM,moderate_recall,0.9441022491298879,0.012004389422347902,5,Not calculated; five CV folds are not independent participants.
+RandomOverSampler + SVM,high_recall,0.04105263157894737,0.022986808212549954,5,Not calculated; five CV folds are not independent participants.
+RandomOverSampler + SVM,roc_auc,0.46773708498164634,0.05961509169291789,5,Not calculated; five CV folds are not independent participants.
+Tuned Class-Weighted SVM,accuracy,0.706,0.06713998642968123,5,Not calculated; five CV folds are not independent participants.
+Tuned Class-Weighted SVM,balanced_accuracy,0.34334443197578934,0.02092019887617194,5,Not calculated; five CV folds are not independent participants.
+Tuned Class-Weighted SVM,macro_f1,0.3339649602350554,0.014960575238275022,5,Not calculated; five CV folds are not independent participants.
+Tuned Class-Weighted SVM,macro_precision,0.33746810185629295,0.01484805882809428,5,Not calculated; five CV folds are not independent participants.
+Tuned Class-Weighted SVM,macro_recall,0.34334443197578934,0.02092019887617194,5,Not calculated; five CV folds are not independent participants.
+Tuned Class-Weighted SVM,weighted_f1,0.7310959492434581,0.039909281856200886,5,Not calculated; five CV folds are not independent participants.
+Tuned Class-Weighted SVM,low_recall,0.13526315789473684,0.11500331200819038,5,Not calculated; five CV folds are not independent participants.
+Tuned Class-Weighted SVM,moderate_recall,0.7931911906642098,0.08384387301146923,5,Not calculated; five CV folds are not independent participants.
+Tuned Class-Weighted SVM,high_recall,0.10157894736842106,0.03449276290065462,5,Not calculated; five CV folds are not independent participants.
+Tuned Class-Weighted SVM,roc_auc,0.5116327624505078,0.03018471638204617,5,Not calculated; five CV folds are not independent participants.
+Logistic Regression Balanced,accuracy,0.3693333333333334,0.04023541833868376,5,Not calculated; five CV folds are not independent participants.
+Logistic Regression Balanced,balanced_accuracy,0.3602918383672322,0.06457615160981842,5,Not calculated; five CV folds are not independent participants.
+Logistic Regression Balanced,macro_f1,0.2531582080547709,0.029267847782102688,5,Not calculated; five CV folds are not independent participants.
+Logistic Regression Balanced,macro_precision,0.33712092681480577,0.017280901232310495,5,Not calculated; five CV folds are not independent participants.
+Logistic Regression Balanced,macro_recall,0.3602918383672322,0.06457615160981842,5,Not calculated; five CV folds are not independent participants.
+Logistic Regression Balanced,weighted_f1,0.46710599140462367,0.04067913183048286,5,Not calculated; five CV folds are not independent participants.
+Logistic Regression Balanced,low_recall,0.30210526315789477,0.12552383314327445,5,Not calculated; five CV folds are not independent participants.
+Logistic Regression Balanced,moderate_recall,0.3714018308911702,0.045993695521429526,5,Not calculated; five CV folds are not independent participants.
+Logistic Regression Balanced,high_recall,0.40736842105263166,0.12901985073490246,5,Not calculated; five CV folds are not independent participants.
+Logistic Regression Balanced,roc_auc,0.4970400986315985,0.0340565706364735,5,Not calculated; five CV folds are not independent participants.
+Random Forest Balanced,accuracy,0.8706666666666667,0.0014907119849998447,5,Not calculated; five CV folds are not independent participants.
+Random Forest Balanced,balanced_accuracy,0.3333333333333333,0.0,5,Not calculated; five CV folds are not independent participants.
+Random Forest Balanced,macro_f1,0.31028729835512336,0.0002836911688583198,5,Not calculated; five CV folds are not independent participants.
+Random Forest Balanced,macro_precision,0.29022222222222227,0.0004969039949999564,5,Not calculated; five CV folds are not independent participants.
+Random Forest Balanced,macro_recall,0.3333333333333333,0.0,5,Not calculated; five CV folds are not independent participants.
+Random Forest Balanced,weighted_f1,0.8104714382679633,0.00213035046342468,5,Not calculated; five CV folds are not independent participants.
+Random Forest Balanced,low_recall,0.0,0.0,5,Not calculated; five CV folds are not independent participants.
+Random Forest Balanced,moderate_recall,1.0,0.0,5,Not calculated; five CV folds are not independent participants.
+Random Forest Balanced,high_recall,0.0,0.0,5,Not calculated; five CV folds are not independent participants.
+Random Forest Balanced,roc_auc,0.5253277346831945,0.024403607555336167,5,Not calculated; five CV folds are not independent participants.
+XGBoost Training Weights,accuracy,0.5713333333333332,0.01659986613065164,5,Not calculated; five CV folds are not independent participants.
+XGBoost Training Weights,balanced_accuracy,0.3299772382903678,0.048463505801138555,5,Not calculated; five CV folds are not independent participants.
+XGBoost Training Weights,macro_f1,0.30479314299726856,0.025055540198350677,5,Not calculated; five CV folds are not independent participants.
+XGBoost Training Weights,macro_precision,0.32897359333051424,0.020857484338613466,5,Not calculated; five CV folds are not independent participants.
+XGBoost Training Weights,macro_recall,0.3299772382903678,0.048463505801138555,5,Not calculated; five CV folds are not independent participants.
+XGBoost Training Weights,weighted_f1,0.6446213641645541,0.013397421000470866,5,Not calculated; five CV folds are not independent participants.
+XGBoost Training Weights,low_recall,0.1663157894736842,0.06715426487468035,5,Not calculated; five CV folds are not independent participants.
+XGBoost Training Weights,moderate_recall,0.6294053990816296,0.018175445058164978,5,Not calculated; five CV folds are not independent participants.
+XGBoost Training Weights,high_recall,0.19421052631578944,0.10572923134171931,5,Not calculated; five CV folds are not independent participants.
+XGBoost Training Weights,roc_auc,0.5385014677637292,0.020921601396936836,5,Not calculated; five CV folds are not independent participants.

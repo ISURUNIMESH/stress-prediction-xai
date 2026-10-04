@@ -1,0 +1,7 @@
+analysis,metric,statistic,p_value,effect_kendall_w,alpha,significant,note,baseline_mean,imbalance_aware_mean,delta_mean
+Friedman across four imbalance-aware models,f1_macro,17.159999999999997,0.0006551600624135176,0.5719999999999998,0.05,True,Matched stratified folds; folds share overlapping training data.,,,
+Friedman across four imbalance-aware models,balanced_accuracy,0.8400000000000034,0.8398775532972503,0.028000000000000115,0.05,False,Matched stratified folds; folds share overlapping training data.,,,
+Baseline vs imbalance-aware CV Macro F1,Logistic Regression CV Macro F1,0.0,1.0,,0.05,False,Both baseline and secondary specification use class_weight='balanced'; models refit on identical folds.,0.245767141186167,0.24576714118616705,5.551115123125783e-17
+Baseline vs imbalance-aware CV Macro F1,Random Forest CV Macro F1,0.0,1.0,,0.05,False,Both baseline and secondary specification use class_weight='balanced'; models refit on identical folds.,0.3102863921369259,0.31028639213692594,5.551115123125783e-17
+Baseline vs imbalance-aware CV Macro F1,SVM CV Macro F1,0.0,1.0,,0.05,False,Both baseline and secondary specification use class_weight='balanced'; models refit on identical folds.,0.3374462393950052,0.3374462393950052,0.0
+Baseline vs imbalance-aware CV Macro F1,XGBoost CV Macro F1,17.0,0.322265625,,0.05,False,Paired Wilcoxon test on baseline-unweighted and training-fold-weighted XGBoost Macro F1.,0.3099041897400295,0.328994428895853,0.01909023915582353

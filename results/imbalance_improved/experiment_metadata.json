@@ -1,0 +1,135 @@
+{
+  "experiment": "Leakage-safe improved imbalance comparison",
+  "timestamp_utc": "2026-09-23T20:34:27.659193+00:00",
+  "random_seed": 42,
+  "number_of_samples": 1500,
+  "class_distribution": {
+    "High Stress": 98,
+    "Low Stress": 96,
+    "Moderate Stress": 1306
+  },
+  "outer_cv": {
+    "type": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 42
+  },
+  "inner_cv": {
+    "type": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 42
+  },
+  "feature_list": [
+    "Age",
+    "Gender",
+    "University",
+    "Degree_Program",
+    "Academic_Year",
+    "Sleep_Hours",
+    "Exercise_Frequency",
+    "Screen_Time_Hours",
+    "Social_Media_Hours",
+    "Study_Hours",
+    "Academic_Pressure",
+    "Financial_Stress",
+    "Family_Support"
+  ],
+  "excluded_pss_fields": [
+    "PSS_Q1",
+    "PSS_Q2",
+    "PSS_Q3",
+    "PSS_Q4",
+    "PSS_Q5",
+    "PSS_Q6",
+    "PSS_Q7",
+    "PSS_Q8",
+    "PSS_Q9",
+    "PSS_Q10",
+    "PSS10_Total"
+  ],
+  "excluded_target": "Stress_Level",
+  "preprocessing": "Numeric median imputation and StandardScaler for SVM/LR; categorical most-frequent imputation and OneHotEncoder(handle_unknown='ignore'); fit separately within each inner/outer training fold.",
+  "imbalance_methods": {
+    "current_svm": "SVC RBF with application metadata parameters C=2, gamma=scale, class_weight=balanced",
+    "random_oversampler_svm": "Training-only random oversampling on the transformed inner/outer training partition; validation/test rows are never resampled.",
+    "tuned_weighted_svm": [
+      {
+        "C": [
+          1.0
+        ],
+        "gamma": [
+          "scale"
+        ],
+        "class_weight": [
+          "balanced"
+        ]
+      },
+      {
+        "C": [
+          2.0
+        ],
+        "gamma": [
+          "scale"
+        ],
+        "class_weight": [
+          "balanced"
+        ]
+      },
+      {
+        "C": [
+          2.0
+        ],
+        "gamma": [
+          0.1
+        ],
+        "class_weight": [
+          "balanced"
+        ]
+      },
+      {
+        "C": [
+          2.0
+        ],
+        "gamma": [
+          "scale"
+        ],
+        "class_weight": [
+          {
+            "0": 4.0,
+            "1": 4.0,
+            "2": 1.0
+          }
+        ]
+      },
+      {
+        "C": [
+          2.0
+        ],
+        "gamma": [
+          "scale"
+        ],
+        "class_weight": [
+          {
+            "0": 6.0,
+            "1": 6.0,
+            "2": 1.0
+          }
+        ]
+      }
+    ],
+    "logistic_regression": "class_weight=balanced",
+    "random_forest": "class_weight=balanced",
+    "xgboost": "compute_sample_weight('balanced') from each current training fold only; no binary scale_pos_weight",
+    "smotenc": "Skipped because imbalanced-learn is not installed in the project Python 3.12 environment; no ordinary SMOTE on one-hot features."
+  },
+  "skipped_candidates": [
+    "SMOTE + SVM",
+    "SMOTE + Tuned SVM"
+  ],
+  "selection_metric": "Mean inner-CV Macro F1; mean inner-CV Balanced Accuracy as tie-breaker.",
+  "deployment_gate": "A candidate is eligible to replace the current SVM only if outer mean Macro F1 and Balanced Accuracy both improve and Low/High Stress recall are not lower; any final selection must be documented and separately exported.",
+  "confidence_intervals": "Not calculated from five folds; fold SD is descriptive because CV training partitions overlap.",
+  "no_research_data_or_existing_artifacts_modified": true,
+  "application_model_changed": false
+}

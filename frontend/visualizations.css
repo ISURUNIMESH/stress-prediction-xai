@@ -1,0 +1,59 @@
+.recommendation-card { border-color: var(--line); background: var(--surface); }
+.recommendation-card h2 { max-width: 410px; }
+.stress-badge { padding: 6px 10px; border: 1px solid #d6daf2; border-radius: 999px; background: #f0f1ff; color: #3c4baa; font-size: 10px; font-weight: 800; white-space: nowrap; }
+.stress-badge[data-level="High Stress"] { border-color: #edcaca; background: #fff2f1; color: #9b424d; }
+.stress-badge[data-level="Moderate Stress"] { border-color: #ead8b1; background: #fff8e9; color: #8c672b; }
+.stress-badge[data-level="Low Stress"] { border-color: #cde4dc; background: #eff9f5; color: #31715e; }
+.recommendation-intro { margin: 14px 0; color: var(--muted); font-size: 12px; }
+.priority-area { display: grid; gap: 7px; margin: 14px 0; }
+.priority-area > span { color: #6d7891; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+.priority-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.priority-tag { padding: 4px 8px; border: 1px solid var(--line); border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 10px; font-weight: 650; }
+.recommendation-list { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; counter-reset: suggestion; }
+.recommendation-item { display: grid; grid-template-columns: 34px 1fr; gap: 10px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); animation: result-enter .22s ease both; }
+.recommendation-icon { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 10px; background: #eff0ff; color: #4a58b3; font-size: 15px; }
+.recommendation-item h3 { margin: 1px 0 3px; color: var(--navy-deep); font-size: 11px; }
+.recommendation-item p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.55; }
+.recommendation-support { margin: 12px 0 0; padding: 11px 12px; border-left: 3px solid #8b68a9; border-radius: 0 9px 9px 0; background: #f8f3fb; color: #5c4c6c; font-size: 10px; }
+.recommendation-disclaimer { margin: 11px 0 0; color: #8992a4; font-size: 9px; line-height: 1.55; }
+.stress-visualization-card { overflow: hidden; }
+.stress-visualization-card h2 { max-width: 360px; }
+.visualization-idle { margin: 16px 0 2px; padding: 20px 17px; border: 1px dashed var(--line); border-radius: 12px; background: var(--accent-soft); color: var(--muted); text-align: center; font-size: 12px; }
+.chart-axis-label { margin: 15px 0 7px; color: var(--muted); font-size: 10px; font-weight: 650; }
+.comparison-legend { display: flex; flex-wrap: wrap; gap: 16px; margin: 11px 0 14px; color: var(--muted); font-size: 10px; }
+.comparison-legend span { display: inline-flex; align-items: center; gap: 7px; }
+.comparison-legend i { width: 10px; height: 10px; display: inline-block; border-radius: 3px; }
+.legend-current { background: #d98445; }
+.legend-reference { background: #6574da; }
+.profile-comparison-chart { display: grid; gap: 13px; }
+.comparison-row { min-width: 0; padding: 9px 10px; border: 1px solid transparent; border-radius: 10px; outline: none; }
+.comparison-row:hover, .comparison-row:focus-visible { border-color: var(--line); background: var(--accent-soft); }
+.comparison-row:focus-visible { box-shadow: 0 0 0 3px var(--focus); }
+.comparison-row-heading { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 7px; color: var(--ink); font-size: 11px; }
+.comparison-row-heading > span:first-child { font-weight: 700; }
+.comparison-row-heading > span:last-child { color: var(--muted); text-align: right; font-size: 9px; }
+.comparison-tracks { display: grid; gap: 5px; }
+.comparison-track { height: 8px; overflow: hidden; border-radius: 99px; background: var(--track); }
+.comparison-track span { display: block; height: 100%; min-width: 2px; border-radius: inherit; }
+.comparison-track.current span { background: #d98445; }
+.comparison-track.reference span { background: #6574da; }
+.profile-comparison-tooltip { min-height: 44px; margin: 12px 0 8px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 9px; background: var(--accent-soft); color: var(--ink); white-space: pre-line; font-size: 10px; line-height: 1.5; }
+.profile-comparison-summary { color: var(--muted); font-size: 10px; line-height: 1.6; }
+.visualization-text-summary { margin: 12px 0 0; color: var(--muted); font-size: 10px; line-height: 1.6; }
+.visualization-disclaimer { margin: 10px 0 0; color: var(--muted); font-size: 9px; line-height: 1.55; }
+@keyframes result-enter { from { opacity: .65; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 760px) {
+  .comparison-row-heading { align-items: flex-start; flex-direction: column; gap: 2px; }
+  .comparison-row-heading > span:last-child { text-align: left; }
+}
+
+@media (max-width: 480px) {
+  .recommendation-item { grid-template-columns: 29px 1fr; gap: 8px; padding: 10px; }
+  .recommendation-icon { width: 28px; height: 28px; }
+  .comparison-row { padding: 8px 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recommendation-item { animation: none; }
+}

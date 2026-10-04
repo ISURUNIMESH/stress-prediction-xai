@@ -1,0 +1,12 @@
+train_n_High Stress,train_n_Low Stress,train_n_Moderate Stress,model,fold,weight_min,weight_max,weight_mean,weights_calculated_from
+78,77,1045,XGBoost,held_out_train,0.3827751196172249,5.194805194805195,1.0000000000000002,seed-42 training partition only
+88,87,1175,XGBoost,1,0.3829787234042553,5.172413793103448,1.0,this fold training partition only
+88,87,1175,XGBoost,2,0.3829787234042553,5.172413793103448,1.0,this fold training partition only
+88,87,1175,XGBoost,3,0.3829787234042553,5.172413793103448,1.0,this fold training partition only
+88,87,1175,XGBoost,4,0.3829787234042553,5.172413793103448,1.0,this fold training partition only
+89,86,1175,XGBoost,5,0.3829787234042553,5.232558139534884,1.0,this fold training partition only
+89,86,1175,XGBoost,6,0.3829787234042553,5.232558139534884,1.0,this fold training partition only
+88,86,1176,XGBoost,7,0.3826530612244898,5.232558139534884,1.0,this fold training partition only
+88,86,1176,XGBoost,8,0.3826530612244898,5.232558139534884,1.0,this fold training partition only
+88,86,1176,XGBoost,9,0.3826530612244898,5.232558139534884,1.0,this fold training partition only
+88,86,1176,XGBoost,10,0.3826530612244898,5.232558139534884,1.0,this fold training partition only

@@ -1,0 +1,62 @@
+{
+  "experiment": "imbalance-aware secondary experiment",
+  "baseline_preserved": true,
+  "baseline_outputs_written": false,
+  "target": "Stress_Level",
+  "excluded_predictors": [
+    "PSS_Q1",
+    "PSS_Q2",
+    "PSS_Q3",
+    "PSS_Q4",
+    "PSS_Q5",
+    "PSS_Q6",
+    "PSS_Q7",
+    "PSS_Q8",
+    "PSS_Q9",
+    "PSS_Q10",
+    "PSS10_Total"
+  ],
+  "features_used": [
+    "Age",
+    "Gender",
+    "University",
+    "Degree_Program",
+    "Academic_Year",
+    "Sleep_Hours",
+    "Exercise_Frequency",
+    "Screen_Time_Hours",
+    "Social_Media_Hours",
+    "Study_Hours",
+    "Academic_Pressure",
+    "Financial_Stress",
+    "Family_Support"
+  ],
+  "same_train_test_split": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "matches_baseline_metadata": true
+  },
+  "imbalance_handling": {
+    "logistic_regression": "class_weight='balanced'; same setting as existing baseline",
+    "svm": "class_weight='balanced'; same setting as existing baseline",
+    "random_forest": "class_weight='balanced'; same setting as existing baseline",
+    "xgboost": "compute_sample_weight('balanced', y_train) independently from each training partition; pass as classifier__sample_weight"
+  },
+  "cv": {
+    "n_splits": 10,
+    "shuffle": true,
+    "random_state": 42
+  },
+  "selected_model": "SVM",
+  "candidate_models_for_robustness_error_and_calibration": [
+    "SVM",
+    "XGBoost"
+  ],
+  "shap": "run only after CV-based model selection; stability estimates use each held-out CV fold and fold-training background",
+  "limitations": [
+    "The three sklearn models already used class_weight='balanced' in the baseline implementation; those model settings are not a new treatment.",
+    "Unweighted baseline XGBoost was refit on the same ten folds to enable the paired CV comparison; these recomputed values are separately recorded.",
+    "Friedman and Wilcoxon tests on ten matched folds are reported with dependence caveat because CV training sets overlap.",
+    "Subgroup metrics are withheld when the subgroup has fewer than 30 test cases or fewer than five cases in any class."
+  ]
+}

@@ -1,0 +1,55 @@
+model,actual,predicted,count
+Current SVM,High Stress,High Stress,7
+Current SVM,High Stress,Low Stress,5
+Current SVM,High Stress,Moderate Stress,86
+Current SVM,Low Stress,High Stress,2
+Current SVM,Low Stress,Low Stress,9
+Current SVM,Low Stress,Moderate Stress,85
+Current SVM,Moderate Stress,High Stress,95
+Current SVM,Moderate Stress,Low Stress,74
+Current SVM,Moderate Stress,Moderate Stress,1137
+RandomOverSampler + SVM,High Stress,High Stress,4
+RandomOverSampler + SVM,High Stress,Low Stress,4
+RandomOverSampler + SVM,High Stress,Moderate Stress,90
+RandomOverSampler + SVM,Low Stress,High Stress,2
+RandomOverSampler + SVM,Low Stress,Low Stress,2
+RandomOverSampler + SVM,Low Stress,Moderate Stress,92
+RandomOverSampler + SVM,Moderate Stress,High Stress,43
+RandomOverSampler + SVM,Moderate Stress,Low Stress,30
+RandomOverSampler + SVM,Moderate Stress,Moderate Stress,1233
+Tuned Class-Weighted SVM,High Stress,High Stress,10
+Tuned Class-Weighted SVM,High Stress,Low Stress,8
+Tuned Class-Weighted SVM,High Stress,Moderate Stress,80
+Tuned Class-Weighted SVM,Low Stress,High Stress,4
+Tuned Class-Weighted SVM,Low Stress,Low Stress,13
+Tuned Class-Weighted SVM,Low Stress,Moderate Stress,79
+Tuned Class-Weighted SVM,Moderate Stress,High Stress,153
+Tuned Class-Weighted SVM,Moderate Stress,Low Stress,117
+Tuned Class-Weighted SVM,Moderate Stress,Moderate Stress,1036
+Logistic Regression Balanced,High Stress,High Stress,40
+Logistic Regression Balanced,High Stress,Low Stress,26
+Logistic Regression Balanced,High Stress,Moderate Stress,32
+Logistic Regression Balanced,Low Stress,High Stress,24
+Logistic Regression Balanced,Low Stress,Low Stress,29
+Logistic Regression Balanced,Low Stress,Moderate Stress,43
+Logistic Regression Balanced,Moderate Stress,High Stress,417
+Logistic Regression Balanced,Moderate Stress,Low Stress,404
+Logistic Regression Balanced,Moderate Stress,Moderate Stress,485
+Random Forest Balanced,High Stress,High Stress,0
+Random Forest Balanced,High Stress,Low Stress,0
+Random Forest Balanced,High Stress,Moderate Stress,98
+Random Forest Balanced,Low Stress,High Stress,0
+Random Forest Balanced,Low Stress,Low Stress,0
+Random Forest Balanced,Low Stress,Moderate Stress,96
+Random Forest Balanced,Moderate Stress,High Stress,0
+Random Forest Balanced,Moderate Stress,Low Stress,0
+Random Forest Balanced,Moderate Stress,Moderate Stress,1306
+XGBoost Training Weights,High Stress,High Stress,19
+XGBoost Training Weights,High Stress,Low Stress,11
+XGBoost Training Weights,High Stress,Moderate Stress,68
+XGBoost Training Weights,Low Stress,High Stress,13
+XGBoost Training Weights,Low Stress,Low Stress,16
+XGBoost Training Weights,Low Stress,Moderate Stress,67
+XGBoost Training Weights,Moderate Stress,High Stress,241
+XGBoost Training Weights,Moderate Stress,Low Stress,243
+XGBoost Training Weights,Moderate Stress,Moderate Stress,822
